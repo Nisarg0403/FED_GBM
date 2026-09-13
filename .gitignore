@@ -1,0 +1,35 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches and environment
+.venv/
+env/
+venv/
+ENV/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local IDE & OS settings
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Graphify & Local Scratch
+graphify-out/
+scratch/
+
+# Redundant Experiment Outputs & Archives
+experiments/results/
+results/archive/
+results/phase7_final/predictions/
+
+# Optional: Large docx binaries
+*.docx

@@ -1,0 +1,6 @@
+cohort_name,file_location,n_patients,patient_id_format,has_clinical,has_survival_time,has_event_status,has_mri_nifti,mri_sequences,has_radiomics_csv,has_genomics,linkage_status,preprocessing_status
+TCGA-GBM Fused,fused_data.csv,97,TCGA-XX-XXXX,True,True,True,True,"T1, T1ce, T2, FLAIR",True,Partial (Molecular),Complete Patient-Level Linkage,Preprocessed (30 features selected)
+TCGA Clinical GDC,Data/tcga/clinical.tsv,617,TCGA-XX-XXXX,True,True,True,False,None,False,Biospecimen metadata,Master Reference,Raw TSV
+BraTS-TCGA-GBM Images,Data/TCGA-images/,102,TCGA-XX-XXXX,False,False,False,True,"T1, T1ce, T2, FLAIR",True,False,Linked to TCGA Clinical,Raw NIfTI + 733 PyRadiomics CSV
+CGGA-693 Directory,Data/cgga693/,0,CGGA_XXXX,Schema Only,Schema Only,Schema Only,False,None,False,mRNA-seq / IDH / MGMT,Unlinked (Empty Directory),Empty Directory
+BraTS Directory,Data/brats/,0,BraTS2021_XXXXX,Schema Only,Schema Only,Schema Only,False,None,False,False,Unlinked (Empty Directory),Empty Directory

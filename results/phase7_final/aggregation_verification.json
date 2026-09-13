@@ -1,0 +1,8 @@
+{
+  "total_per_seed_rows": 120,
+  "expected_per_seed_rows": 120,
+  "total_aggregate_rows": 24,
+  "expected_aggregate_rows": 24,
+  "mismatch_count": 0,
+  "all_metrics_have_5_valid_observations": true
+}

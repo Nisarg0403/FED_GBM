@@ -1,0 +1,575 @@
+cases.submitter_id,demographic.vital_status,demographic.age_at_index,demographic.gender,treatments.treatment_type,survival_long,KPS_Score
+TCGA-GBM-P001,Dead,73.0,male,none,0,88.0
+TCGA-GBM-P002,Alive,49.0,female,"radiation, chemotherapy",1,67.0
+TCGA-GBM-P003,Alive,55.0,male,"radiation, chemotherapy",1,98.0
+TCGA-GBM-P004,Alive,53.0,female,"radiation, chemotherapy",1,82.0
+TCGA-GBM-P005,Alive,45.0,male,"radiation, chemotherapy",1,70.0
+TCGA-GBM-P006,Dead,58.0,female,none,0,95.0
+TCGA-GBM-P007,Alive,74.0,male,"radiation, chemotherapy",1,83.0
+TCGA-GBM-P008,Alive,37.0,female,"radiation, chemotherapy",1,81.0
+TCGA-GBM-P009,Alive,36.0,male,"radiation, chemotherapy",1,83.0
+TCGA-GBM-P010,Alive,64.0,female,"radiation, chemotherapy",1,97.0
+TCGA-GBM-P011,Dead,36.0,male,none,0,80.0
+TCGA-GBM-P012,Alive,67.0,female,"radiation, chemotherapy",1,71.0
+TCGA-GBM-P013,Alive,56.0,male,"radiation, chemotherapy",1,84.0
+TCGA-GBM-P014,Alive,61.0,female,"radiation, chemotherapy",1,87.0
+TCGA-GBM-P015,Alive,50.0,male,"radiation, chemotherapy",1,74.0
+TCGA-GBM-P016,Dead,37.0,female,none,0,96.0
+TCGA-GBM-P017,Alive,41.0,male,"radiation, chemotherapy",1,80.0
+TCGA-GBM-P018,Alive,43.0,female,"radiation, chemotherapy",1,98.0
+TCGA-GBM-P019,Alive,52.0,male,"radiation, chemotherapy",1,63.0
+TCGA-GBM-P020,Alive,59.0,female,"radiation, chemotherapy",1,73.0
+TCGA-GBM-P021,Dead,43.0,male,none,0,85.0
+TCGA-GBM-P022,Alive,36.0,female,"radiation, chemotherapy",1,79.0
+TCGA-GBM-P023,Alive,62.0,male,"radiation, chemotherapy",1,66.0
+TCGA-GBM-P024,Alive,42.0,female,"radiation, chemotherapy",1,94.0
+TCGA-GBM-P025,Alive,48.0,male,"radiation, chemotherapy",1,76.0
+TCGA-GBM-P026,Dead,70.0,female,none,0,99.0
+TCGA-GBM-P027,Alive,38.0,male,"radiation, chemotherapy",1,61.0
+TCGA-GBM-P028,Alive,40.0,female,"radiation, chemotherapy",1,63.0
+TCGA-GBM-P029,Alive,63.0,male,"radiation, chemotherapy",1,77.0
+TCGA-GBM-P030,Alive,60.0,female,"radiation, chemotherapy",1,93.0
+TCGA-GBM-P031,Dead,44.0,male,none,0,95.0
+TCGA-GBM-P032,Alive,48.0,female,"radiation, chemotherapy",1,90.0
+TCGA-GBM-P033,Alive,49.0,male,"radiation, chemotherapy",1,67.0
+TCGA-GBM-P034,Alive,48.0,female,"radiation, chemotherapy",1,82.0
+TCGA-GBM-P035,Alive,74.0,male,"radiation, chemotherapy",1,80.0
+TCGA-GBM-P036,Dead,50.0,female,none,0,77.0
+TCGA-GBM-P037,Alive,58.0,male,"radiation, chemotherapy",1,85.0
+TCGA-GBM-P038,Alive,59.0,female,"radiation, chemotherapy",1,88.0
+TCGA-GBM-P039,Alive,49.0,male,"radiation, chemotherapy",1,60.0
+TCGA-GBM-P040,Alive,59.0,female,"radiation, chemotherapy",1,66.0
+TCGA-GBM-P041,Dead,43.0,male,none,0,83.0
+TCGA-GBM-P042,Alive,35.0,female,"radiation, chemotherapy",1,67.0
+TCGA-GBM-P043,Alive,58.0,male,"radiation, chemotherapy",1,70.0
+TCGA-GBM-P044,Alive,51.0,female,"radiation, chemotherapy",1,67.0
+TCGA-GBM-P045,Alive,69.0,male,"radiation, chemotherapy",1,94.0
+TCGA-GBM-P046,Dead,67.0,female,none,0,64.0
+TCGA-GBM-P047,Alive,76.0,male,"radiation, chemotherapy",1,98.0
+TCGA-GBM-P048,Alive,75.0,female,"radiation, chemotherapy",1,87.0
+TCGA-GBM-P049,Alive,41.0,male,"radiation, chemotherapy",1,68.0
+TCGA-GBM-P050,Alive,42.0,female,"radiation, chemotherapy",1,71.0
+TCGA-GBM-P051,Dead,68.0,male,none,0,92.0
+TCGA-GBM-P052,Alive,57.0,female,"radiation, chemotherapy",1,83.0
+TCGA-GBM-P053,Alive,71.0,male,"radiation, chemotherapy",1,94.0
+TCGA-GBM-P054,Alive,74.0,female,"radiation, chemotherapy",1,81.0
+TCGA-GBM-P055,Alive,61.0,male,"radiation, chemotherapy",1,94.0
+TCGA-GBM-P056,Dead,35.0,female,none,0,94.0
+TCGA-GBM-P057,Alive,71.0,male,"radiation, chemotherapy",1,73.0
+TCGA-GBM-P058,Alive,37.0,female,"radiation, chemotherapy",1,60.0
+TCGA-GBM-P059,Alive,39.0,male,"radiation, chemotherapy",1,85.0
+TCGA-GBM-P060,Alive,48.0,female,"radiation, chemotherapy",1,98.0
+TCGA-GBM-P061,Dead,61.0,male,none,0,68.0
+TCGA-GBM-P062,Alive,49.0,female,"radiation, chemotherapy",1,74.0
+TCGA-GBM-P063,Alive,60.0,male,"radiation, chemotherapy",1,72.0
+TCGA-GBM-P064,Alive,66.0,female,"radiation, chemotherapy",1,98.0
+TCGA-GBM-P065,Alive,66.0,male,"radiation, chemotherapy",1,63.0
+TCGA-GBM-P066,Dead,64.0,female,none,0,96.0
+TCGA-GBM-P067,Alive,57.0,male,"radiation, chemotherapy",1,98.0
+TCGA-GBM-P068,Alive,49.0,female,"radiation, chemotherapy",1,88.0
+TCGA-GBM-P069,Alive,70.0,male,"radiation, chemotherapy",1,72.0
+TCGA-GBM-P070,Alive,66.0,female,"radiation, chemotherapy",1,66.0
+TCGA-GBM-P071,Dead,56.0,male,none,0,87.0
+TCGA-GBM-P072,Alive,36.0,female,"radiation, chemotherapy",1,65.0
+TCGA-GBM-P073,Alive,62.0,male,"radiation, chemotherapy",1,87.0
+TCGA-GBM-P074,Alive,54.0,female,"radiation, chemotherapy",1,89.0
+TCGA-GBM-P075,Alive,45.0,male,"radiation, chemotherapy",1,87.0
+TCGA-GBM-P076,Dead,59.0,female,none,0,98.0
+TCGA-GBM-P077,Alive,67.0,male,"radiation, chemotherapy",1,60.0
+TCGA-GBM-P078,Alive,61.0,female,"radiation, chemotherapy",1,72.0
+TCGA-GBM-P079,Alive,75.0,male,"radiation, chemotherapy",1,62.0
+TCGA-GBM-P080,Alive,73.0,female,"radiation, chemotherapy",1,65.0
+TCGA-GBM-P081,Dead,42.0,male,none,0,86.0
+TCGA-GBM-P082,Alive,43.0,female,"radiation, chemotherapy",1,96.0
+TCGA-GBM-P083,Alive,67.0,male,"radiation, chemotherapy",1,83.0
+TCGA-GBM-P084,Alive,49.0,female,"radiation, chemotherapy",1,91.0
+TCGA-GBM-P085,Alive,66.0,male,"radiation, chemotherapy",1,83.0
+TCGA-GBM-P086,Dead,75.0,female,none,0,71.0
+TCGA-GBM-P087,Alive,73.0,male,"radiation, chemotherapy",1,61.0
+TCGA-GBM-P088,Alive,37.0,female,"radiation, chemotherapy",1,96.0
+TCGA-GBM-P089,Alive,51.0,male,"radiation, chemotherapy",1,61.0
+TCGA-GBM-P090,Alive,36.0,female,"radiation, chemotherapy",1,87.0
+TCGA-GBM-P091,Dead,57.0,male,none,0,96.0
+TCGA-GBM-P092,Alive,66.0,female,"radiation, chemotherapy",1,92.0
+TCGA-GBM-P093,Alive,35.0,male,"radiation, chemotherapy",1,78.0
+TCGA-GBM-P094,Alive,36.0,female,"radiation, chemotherapy",1,85.0
+TCGA-GBM-P095,Alive,66.0,male,"radiation, chemotherapy",1,65.0
+TCGA-GBM-P096,Dead,66.0,female,none,0,63.0
+TCGA-GBM-P097,Alive,45.0,male,"radiation, chemotherapy",1,76.0
+TCGA-GBM-P098,Alive,72.0,female,"radiation, chemotherapy",1,83.0
+TCGA-GBM-P099,Alive,39.0,male,"radiation, chemotherapy",1,93.0
+TCGA-GBM-P100,Alive,40.0,female,"radiation, chemotherapy",1,81.0
+TCGA-GBM-P101,Dead,45.0,male,none,0,75.0
+TCGA-GBM-P102,Alive,67.0,female,"radiation, chemotherapy",1,68.0
+TCGA-GBM-P103,Alive,40.0,male,"radiation, chemotherapy",1,75.0
+TCGA-GBM-P104,Alive,63.0,female,"radiation, chemotherapy",1,62.0
+TCGA-GBM-P105,Alive,54.0,male,"radiation, chemotherapy",1,95.0
+TCGA-GBM-P106,Dead,53.0,female,none,0,85.0
+TCGA-GBM-P107,Alive,37.0,male,"radiation, chemotherapy",1,78.0
+TCGA-GBM-P108,Alive,54.0,female,"radiation, chemotherapy",1,91.0
+TCGA-GBM-P109,Alive,41.0,male,"radiation, chemotherapy",1,92.0
+TCGA-GBM-P110,Alive,74.0,female,"radiation, chemotherapy",1,98.0
+TCGA-GBM-P111,Dead,52.0,male,none,0,99.0
+TCGA-GBM-P112,Alive,35.0,female,"radiation, chemotherapy",1,70.0
+TCGA-GBM-P113,Alive,62.0,male,"radiation, chemotherapy",1,84.0
+TCGA-GBM-P114,Alive,57.0,female,"radiation, chemotherapy",1,90.0
+TCGA-GBM-P115,Alive,64.0,male,"radiation, chemotherapy",1,94.0
+TCGA-GBM-P116,Dead,41.0,female,none,0,75.0
+TCGA-GBM-P117,Alive,60.0,male,"radiation, chemotherapy",1,61.0
+TCGA-GBM-P118,Alive,35.0,female,"radiation, chemotherapy",1,71.0
+TCGA-GBM-P119,Alive,39.0,male,"radiation, chemotherapy",1,96.0
+TCGA-GBM-P120,Alive,66.0,female,"radiation, chemotherapy",1,68.0
+TCGA-GBM-P121,Dead,75.0,male,none,0,94.0
+TCGA-GBM-P122,Alive,53.0,female,"radiation, chemotherapy",1,75.0
+TCGA-GBM-P123,Alive,37.0,male,"radiation, chemotherapy",1,79.0
+TCGA-GBM-P124,Alive,58.0,female,"radiation, chemotherapy",1,92.0
+TCGA-GBM-P125,Alive,58.0,male,"radiation, chemotherapy",1,70.0
+TCGA-GBM-P126,Dead,42.0,female,none,0,95.0
+TCGA-GBM-P127,Alive,72.0,male,"radiation, chemotherapy",1,99.0
+TCGA-GBM-P128,Alive,54.0,female,"radiation, chemotherapy",1,94.0
+TCGA-GBM-P129,Alive,59.0,male,"radiation, chemotherapy",1,94.0
+TCGA-GBM-P130,Alive,59.0,female,"radiation, chemotherapy",1,88.0
+TCGA-GBM-P131,Dead,52.0,male,none,0,77.0
+TCGA-GBM-P132,Alive,36.0,female,"radiation, chemotherapy",1,94.0
+TCGA-GBM-P133,Alive,50.0,male,"radiation, chemotherapy",1,95.0
+TCGA-GBM-P134,Alive,67.0,female,"radiation, chemotherapy",1,63.0
+TCGA-GBM-P135,Alive,67.0,male,"radiation, chemotherapy",1,73.0
+TCGA-GBM-P136,Dead,55.0,female,none,0,79.0
+TCGA-GBM-P137,Alive,42.0,male,"radiation, chemotherapy",1,66.0
+TCGA-GBM-P138,Alive,37.0,female,"radiation, chemotherapy",1,76.0
+TCGA-GBM-P139,Alive,67.0,male,"radiation, chemotherapy",1,71.0
+TCGA-GBM-P140,Alive,56.0,female,"radiation, chemotherapy",1,81.0
+TCGA-GBM-P141,Dead,64.0,male,none,0,97.0
+TCGA-GBM-P142,Alive,72.0,female,"radiation, chemotherapy",1,67.0
+TCGA-GBM-P143,Alive,61.0,male,"radiation, chemotherapy",1,86.0
+TCGA-GBM-P144,Alive,68.0,female,"radiation, chemotherapy",1,80.0
+TCGA-GBM-P145,Alive,64.0,male,"radiation, chemotherapy",1,92.0
+TCGA-GBM-P146,Dead,62.0,female,none,0,92.0
+TCGA-GBM-P147,Alive,39.0,male,"radiation, chemotherapy",1,78.0
+TCGA-GBM-P148,Alive,38.0,female,"radiation, chemotherapy",1,94.0
+TCGA-GBM-P149,Alive,51.0,male,"radiation, chemotherapy",1,87.0
+TCGA-GBM-P150,Alive,64.0,female,"radiation, chemotherapy",1,88.0
+TCGA-GBM-P151,Dead,40.0,male,none,0,94.0
+TCGA-GBM-P152,Alive,75.0,female,"radiation, chemotherapy",1,96.0
+TCGA-GBM-P153,Alive,58.0,male,"radiation, chemotherapy",1,88.0
+TCGA-GBM-P154,Alive,65.0,female,"radiation, chemotherapy",1,94.0
+TCGA-GBM-P155,Alive,67.0,male,"radiation, chemotherapy",1,80.0
+TCGA-GBM-P156,Dead,66.0,female,none,0,82.0
+TCGA-GBM-P157,Alive,67.0,male,"radiation, chemotherapy",1,62.0
+TCGA-GBM-P158,Alive,52.0,female,"radiation, chemotherapy",1,84.0
+TCGA-GBM-P159,Alive,76.0,male,"radiation, chemotherapy",1,90.0
+TCGA-GBM-P160,Alive,37.0,female,"radiation, chemotherapy",1,99.0
+TCGA-GBM-P161,Dead,58.0,male,none,0,91.0
+TCGA-GBM-P162,Alive,56.0,female,"radiation, chemotherapy",1,82.0
+TCGA-GBM-P163,Alive,36.0,male,"radiation, chemotherapy",1,86.0
+TCGA-GBM-P164,Alive,76.0,female,"radiation, chemotherapy",1,61.0
+TCGA-GBM-P165,Alive,60.0,male,"radiation, chemotherapy",1,76.0
+TCGA-GBM-P166,Dead,74.0,female,none,0,92.0
+TCGA-GBM-P167,Alive,43.0,male,"radiation, chemotherapy",1,98.0
+TCGA-GBM-P168,Alive,63.0,female,"radiation, chemotherapy",1,85.0
+TCGA-GBM-P169,Alive,69.0,male,"radiation, chemotherapy",1,84.0
+TCGA-GBM-P170,Alive,58.0,female,"radiation, chemotherapy",1,72.0
+TCGA-GBM-P171,Dead,41.0,male,none,0,95.0
+TCGA-GBM-P172,Alive,54.0,female,"radiation, chemotherapy",1,60.0
+TCGA-GBM-P173,Alive,42.0,male,"radiation, chemotherapy",1,75.0
+TCGA-GBM-P174,Alive,48.0,female,"radiation, chemotherapy",1,71.0
+TCGA-GBM-P175,Alive,57.0,male,"radiation, chemotherapy",1,74.0
+TCGA-GBM-P176,Dead,62.0,female,none,0,93.0
+TCGA-GBM-P177,Alive,36.0,male,"radiation, chemotherapy",1,91.0
+TCGA-GBM-P178,Alive,57.0,female,"radiation, chemotherapy",1,81.0
+TCGA-GBM-P179,Alive,59.0,male,"radiation, chemotherapy",1,81.0
+TCGA-GBM-P180,Alive,56.0,female,"radiation, chemotherapy",1,65.0
+TCGA-GBM-P181,Dead,49.0,male,none,0,96.0
+TCGA-GBM-P182,Alive,67.0,female,"radiation, chemotherapy",1,67.0
+TCGA-GBM-P183,Alive,39.0,male,"radiation, chemotherapy",1,98.0
+TCGA-GBM-P184,Alive,38.0,female,"radiation, chemotherapy",1,65.0
+TCGA-GBM-P185,Alive,66.0,male,"radiation, chemotherapy",1,89.0
+TCGA-GBM-P186,Dead,69.0,female,none,0,99.0
+TCGA-GBM-P187,Alive,50.0,male,"radiation, chemotherapy",1,72.0
+TCGA-GBM-P188,Alive,76.0,female,"radiation, chemotherapy",1,89.0
+TCGA-GBM-P189,Alive,53.0,male,"radiation, chemotherapy",1,76.0
+TCGA-GBM-P190,Alive,53.0,female,"radiation, chemotherapy",1,87.0
+TCGA-GBM-P191,Dead,60.0,male,none,0,96.0
+TCGA-GBM-P192,Alive,60.0,female,"radiation, chemotherapy",1,82.0
+TCGA-GBM-P193,Alive,43.0,male,"radiation, chemotherapy",1,71.0
+TCGA-GBM-P194,Alive,35.0,female,"radiation, chemotherapy",1,60.0
+TCGA-GBM-P195,Alive,68.0,male,"radiation, chemotherapy",1,91.0
+TCGA-GBM-P196,Dead,59.0,female,none,0,99.0
+TCGA-GBM-P197,Alive,35.0,male,"radiation, chemotherapy",1,75.0
+TCGA-GBM-P198,Alive,73.0,female,"radiation, chemotherapy",1,64.0
+TCGA-GBM-P199,Alive,56.0,male,"radiation, chemotherapy",1,88.0
+TCGA-GBM-P200,Alive,37.0,female,"radiation, chemotherapy",1,71.0
+TCGA-GBM-P201,Dead,60.0,male,none,0,75.0
+TCGA-GBM-P202,Alive,71.0,female,"radiation, chemotherapy",1,81.0
+TCGA-GBM-P203,Alive,63.0,male,"radiation, chemotherapy",1,73.0
+TCGA-GBM-P204,Alive,62.0,female,"radiation, chemotherapy",1,64.0
+TCGA-GBM-P205,Alive,64.0,male,"radiation, chemotherapy",1,64.0
+TCGA-GBM-P206,Dead,46.0,female,none,0,75.0
+TCGA-GBM-P207,Alive,60.0,male,"radiation, chemotherapy",1,85.0
+TCGA-GBM-P208,Alive,55.0,female,"radiation, chemotherapy",1,98.0
+TCGA-GBM-P209,Alive,70.0,male,"radiation, chemotherapy",1,92.0
+TCGA-GBM-P210,Alive,64.0,female,"radiation, chemotherapy",1,96.0
+TCGA-GBM-P211,Dead,57.0,male,none,0,69.0
+TCGA-GBM-P212,Alive,39.0,female,"radiation, chemotherapy",1,95.0
+TCGA-GBM-P213,Alive,68.0,male,"radiation, chemotherapy",1,90.0
+TCGA-GBM-P214,Alive,44.0,female,"radiation, chemotherapy",1,78.0
+TCGA-GBM-P215,Alive,66.0,male,"radiation, chemotherapy",1,60.0
+TCGA-GBM-P216,Dead,39.0,female,none,0,63.0
+TCGA-GBM-P217,Alive,50.0,male,"radiation, chemotherapy",1,83.0
+TCGA-GBM-P218,Alive,50.0,female,"radiation, chemotherapy",1,61.0
+TCGA-GBM-P219,Alive,62.0,male,"radiation, chemotherapy",1,91.0
+TCGA-GBM-P220,Alive,61.0,female,"radiation, chemotherapy",1,79.0
+TCGA-GBM-P221,Dead,58.0,male,none,0,71.0
+TCGA-GBM-P222,Alive,69.0,female,"radiation, chemotherapy",1,92.0
+TCGA-GBM-P223,Alive,67.0,male,"radiation, chemotherapy",1,96.0
+TCGA-GBM-P224,Alive,46.0,female,"radiation, chemotherapy",1,62.0
+TCGA-GBM-P225,Alive,35.0,male,"radiation, chemotherapy",1,92.0
+TCGA-GBM-P226,Dead,74.0,female,none,0,69.0
+TCGA-GBM-P227,Alive,77.0,male,"radiation, chemotherapy",1,88.0
+TCGA-GBM-P228,Alive,47.0,female,"radiation, chemotherapy",1,71.0
+TCGA-GBM-P229,Alive,65.0,male,"radiation, chemotherapy",1,61.0
+TCGA-GBM-P230,Alive,69.0,female,"radiation, chemotherapy",1,82.0
+TCGA-GBM-P231,Dead,51.0,male,none,0,85.0
+TCGA-GBM-P232,Alive,42.0,female,"radiation, chemotherapy",1,88.0
+TCGA-GBM-P233,Alive,60.0,male,"radiation, chemotherapy",1,69.0
+TCGA-GBM-P234,Alive,60.0,female,"radiation, chemotherapy",1,93.0
+TCGA-GBM-P235,Alive,75.0,male,"radiation, chemotherapy",1,66.0
+TCGA-GBM-P236,Dead,38.0,female,none,0,70.0
+TCGA-GBM-P237,Alive,63.0,male,"radiation, chemotherapy",1,95.0
+TCGA-GBM-P238,Alive,59.0,female,"radiation, chemotherapy",1,80.0
+TCGA-GBM-P239,Alive,70.0,male,"radiation, chemotherapy",1,69.0
+TCGA-GBM-P240,Alive,71.0,female,"radiation, chemotherapy",1,68.0
+TCGA-GBM-P241,Dead,58.0,male,none,0,94.0
+TCGA-GBM-P242,Alive,69.0,female,"radiation, chemotherapy",1,95.0
+TCGA-GBM-P243,Alive,52.0,male,"radiation, chemotherapy",1,98.0
+TCGA-GBM-P244,Alive,66.0,female,"radiation, chemotherapy",1,83.0
+TCGA-GBM-P245,Alive,57.0,male,"radiation, chemotherapy",1,91.0
+TCGA-GBM-P246,Dead,71.0,female,none,0,71.0
+TCGA-GBM-P247,Alive,47.0,male,"radiation, chemotherapy",1,82.0
+TCGA-GBM-P248,Alive,59.0,female,"radiation, chemotherapy",1,94.0
+TCGA-GBM-P249,Alive,75.0,male,"radiation, chemotherapy",1,89.0
+TCGA-GBM-P250,Alive,51.0,female,"radiation, chemotherapy",1,79.0
+TCGA-GBM-P251,Dead,59.0,male,none,0,81.0
+TCGA-GBM-P252,Alive,47.0,female,"radiation, chemotherapy",1,78.0
+TCGA-GBM-P253,Alive,70.0,male,"radiation, chemotherapy",1,71.0
+TCGA-GBM-P254,Alive,75.0,female,"radiation, chemotherapy",1,78.0
+TCGA-GBM-P255,Alive,46.0,male,"radiation, chemotherapy",1,68.0
+TCGA-GBM-P256,Dead,41.0,female,none,0,87.0
+TCGA-GBM-P257,Alive,48.0,male,"radiation, chemotherapy",1,90.0
+TCGA-GBM-P258,Alive,53.0,female,"radiation, chemotherapy",1,75.0
+TCGA-GBM-P259,Alive,39.0,male,"radiation, chemotherapy",1,94.0
+TCGA-GBM-P260,Alive,46.0,female,"radiation, chemotherapy",1,84.0
+TCGA-GBM-P261,Dead,55.0,male,none,0,95.0
+TCGA-GBM-P262,Alive,57.0,female,"radiation, chemotherapy",1,75.0
+TCGA-GBM-P263,Alive,73.0,male,"radiation, chemotherapy",1,98.0
+TCGA-GBM-P264,Alive,48.0,female,"radiation, chemotherapy",1,90.0
+TCGA-GBM-P265,Alive,39.0,male,"radiation, chemotherapy",1,94.0
+TCGA-GBM-P266,Dead,57.0,female,none,0,88.0
+TCGA-GBM-P267,Alive,77.0,male,"radiation, chemotherapy",1,70.0
+TCGA-GBM-P268,Alive,52.0,female,"radiation, chemotherapy",1,71.0
+TCGA-GBM-P269,Alive,43.0,male,"radiation, chemotherapy",1,69.0
+TCGA-GBM-P270,Alive,51.0,female,"radiation, chemotherapy",1,97.0
+TCGA-GBM-P271,Dead,41.0,male,none,0,72.0
+TCGA-GBM-P272,Alive,74.0,female,"radiation, chemotherapy",1,68.0
+TCGA-GBM-P273,Alive,61.0,male,"radiation, chemotherapy",1,61.0
+TCGA-GBM-P274,Alive,39.0,female,"radiation, chemotherapy",1,88.0
+TCGA-GBM-P275,Alive,71.0,male,"radiation, chemotherapy",1,97.0
+TCGA-GBM-P276,Dead,53.0,female,none,0,67.0
+TCGA-GBM-P277,Alive,35.0,male,"radiation, chemotherapy",1,81.0
+TCGA-GBM-P278,Alive,51.0,female,"radiation, chemotherapy",1,66.0
+TCGA-GBM-P279,Alive,59.0,male,"radiation, chemotherapy",1,63.0
+TCGA-GBM-P280,Alive,70.0,female,"radiation, chemotherapy",1,65.0
+TCGA-GBM-P281,Dead,65.0,male,none,0,78.0
+TCGA-GBM-P282,Alive,73.0,female,"radiation, chemotherapy",1,86.0
+TCGA-GBM-P283,Alive,44.0,male,"radiation, chemotherapy",1,85.0
+TCGA-GBM-P284,Alive,53.0,female,"radiation, chemotherapy",1,98.0
+TCGA-GBM-P285,Alive,37.0,male,"radiation, chemotherapy",1,72.0
+TCGA-GBM-P286,Dead,62.0,female,none,0,79.0
+TCGA-GBM-P287,Alive,62.0,male,"radiation, chemotherapy",1,67.0
+TCGA-GBM-P288,Alive,75.0,female,"radiation, chemotherapy",1,98.0
+TCGA-GBM-P289,Alive,35.0,male,"radiation, chemotherapy",1,62.0
+TCGA-GBM-P290,Alive,47.0,female,"radiation, chemotherapy",1,87.0
+TCGA-GBM-P291,Dead,59.0,male,none,0,92.0
+TCGA-GBM-P292,Alive,72.0,female,"radiation, chemotherapy",1,65.0
+TCGA-GBM-P293,Alive,66.0,male,"radiation, chemotherapy",1,80.0
+TCGA-GBM-P294,Alive,50.0,female,"radiation, chemotherapy",1,80.0
+TCGA-GBM-P295,Alive,45.0,male,"radiation, chemotherapy",1,96.0
+TCGA-GBM-P296,Dead,70.0,female,none,0,94.0
+TCGA-GBM-P297,Alive,53.0,male,"radiation, chemotherapy",1,79.0
+TCGA-GBM-P298,Alive,52.0,female,"radiation, chemotherapy",1,73.0
+TCGA-GBM-P299,Alive,49.0,male,"radiation, chemotherapy",1,90.0
+TCGA-GBM-P300,Alive,35.0,female,"radiation, chemotherapy",1,62.0
+TCGA-GBM-P301,Dead,50.0,male,none,0,82.0
+TCGA-GBM-P302,Alive,45.0,female,"radiation, chemotherapy",1,71.0
+TCGA-GBM-P303,Alive,44.0,male,"radiation, chemotherapy",1,91.0
+TCGA-GBM-P304,Alive,50.0,female,"radiation, chemotherapy",1,67.0
+TCGA-GBM-P305,Alive,72.0,male,"radiation, chemotherapy",1,71.0
+TCGA-GBM-P306,Dead,58.0,female,none,0,87.0
+TCGA-GBM-P307,Alive,42.0,male,"radiation, chemotherapy",1,87.0
+TCGA-GBM-P308,Alive,70.0,female,"radiation, chemotherapy",1,85.0
+TCGA-GBM-P309,Alive,42.0,male,"radiation, chemotherapy",1,87.0
+TCGA-GBM-P310,Alive,62.0,female,"radiation, chemotherapy",1,96.0
+TCGA-GBM-P311,Dead,75.0,male,none,0,95.0
+TCGA-GBM-P312,Alive,61.0,female,"radiation, chemotherapy",1,76.0
+TCGA-GBM-P313,Alive,43.0,male,"radiation, chemotherapy",1,92.0
+TCGA-GBM-P314,Alive,54.0,female,"radiation, chemotherapy",1,72.0
+TCGA-GBM-P315,Alive,62.0,male,"radiation, chemotherapy",1,88.0
+TCGA-GBM-P316,Dead,47.0,female,none,0,94.0
+TCGA-GBM-P317,Alive,40.0,male,"radiation, chemotherapy",1,77.0
+TCGA-GBM-P318,Alive,39.0,female,"radiation, chemotherapy",1,84.0
+TCGA-GBM-P319,Alive,36.0,male,"radiation, chemotherapy",1,69.0
+TCGA-GBM-P320,Alive,64.0,female,"radiation, chemotherapy",1,64.0
+TCGA-GBM-P321,Dead,67.0,male,none,0,60.0
+TCGA-GBM-P322,Alive,52.0,female,"radiation, chemotherapy",1,91.0
+TCGA-GBM-P323,Alive,45.0,male,"radiation, chemotherapy",1,80.0
+TCGA-GBM-P324,Alive,60.0,female,"radiation, chemotherapy",1,84.0
+TCGA-GBM-P325,Alive,56.0,male,"radiation, chemotherapy",1,86.0
+TCGA-GBM-P326,Dead,47.0,female,none,0,92.0
+TCGA-GBM-P327,Alive,68.0,male,"radiation, chemotherapy",1,94.0
+TCGA-GBM-P328,Alive,35.0,female,"radiation, chemotherapy",1,80.0
+TCGA-GBM-P329,Alive,40.0,male,"radiation, chemotherapy",1,87.0
+TCGA-GBM-P330,Alive,51.0,female,"radiation, chemotherapy",1,64.0
+TCGA-GBM-P331,Dead,65.0,male,none,0,64.0
+TCGA-GBM-P332,Alive,72.0,female,"radiation, chemotherapy",1,62.0
+TCGA-GBM-P333,Alive,57.0,male,"radiation, chemotherapy",1,96.0
+TCGA-GBM-P334,Alive,71.0,female,"radiation, chemotherapy",1,69.0
+TCGA-GBM-P335,Alive,44.0,male,"radiation, chemotherapy",1,78.0
+TCGA-GBM-P336,Dead,51.0,female,none,0,80.0
+TCGA-GBM-P337,Alive,48.0,male,"radiation, chemotherapy",1,68.0
+TCGA-GBM-P338,Alive,35.0,female,"radiation, chemotherapy",1,72.0
+TCGA-GBM-P339,Alive,38.0,male,"radiation, chemotherapy",1,60.0
+TCGA-GBM-P340,Alive,74.0,female,"radiation, chemotherapy",1,91.0
+TCGA-GBM-P341,Dead,68.0,male,none,0,87.0
+TCGA-GBM-P342,Alive,65.0,female,"radiation, chemotherapy",1,67.0
+TCGA-GBM-P343,Alive,73.0,male,"radiation, chemotherapy",1,85.0
+TCGA-GBM-P344,Alive,68.0,female,"radiation, chemotherapy",1,62.0
+TCGA-GBM-P345,Alive,46.0,male,"radiation, chemotherapy",1,60.0
+TCGA-GBM-P346,Dead,39.0,female,none,0,89.0
+TCGA-GBM-P347,Alive,64.0,male,"radiation, chemotherapy",1,76.0
+TCGA-GBM-P348,Alive,57.0,female,"radiation, chemotherapy",1,74.0
+TCGA-GBM-P349,Alive,71.0,male,"radiation, chemotherapy",1,80.0
+TCGA-GBM-P350,Alive,48.0,female,"radiation, chemotherapy",1,61.0
+TCGA-GBM-P351,Dead,45.0,male,none,0,98.0
+TCGA-GBM-P352,Alive,72.0,female,"radiation, chemotherapy",1,93.0
+TCGA-GBM-P353,Alive,72.0,male,"radiation, chemotherapy",1,93.0
+TCGA-GBM-P354,Alive,52.0,female,"radiation, chemotherapy",1,89.0
+TCGA-GBM-P355,Alive,49.0,male,"radiation, chemotherapy",1,86.0
+TCGA-GBM-P356,Dead,68.0,female,none,0,97.0
+TCGA-GBM-P357,Alive,67.0,male,"radiation, chemotherapy",1,83.0
+TCGA-GBM-P358,Alive,49.0,female,"radiation, chemotherapy",1,89.0
+TCGA-GBM-P359,Alive,76.0,male,"radiation, chemotherapy",1,76.0
+TCGA-GBM-P360,Alive,39.0,female,"radiation, chemotherapy",1,88.0
+TCGA-GBM-P361,Dead,38.0,male,none,0,69.0
+TCGA-GBM-P362,Alive,51.0,female,"radiation, chemotherapy",1,69.0
+TCGA-GBM-P363,Alive,51.0,male,"radiation, chemotherapy",1,79.0
+TCGA-GBM-P364,Alive,58.0,female,"radiation, chemotherapy",1,64.0
+TCGA-GBM-P365,Alive,68.0,male,"radiation, chemotherapy",1,65.0
+TCGA-GBM-P366,Dead,36.0,female,none,0,72.0
+TCGA-GBM-P367,Alive,77.0,male,"radiation, chemotherapy",1,70.0
+TCGA-GBM-P368,Alive,57.0,female,"radiation, chemotherapy",1,75.0
+TCGA-GBM-P369,Alive,65.0,male,"radiation, chemotherapy",1,70.0
+TCGA-GBM-P370,Alive,50.0,female,"radiation, chemotherapy",1,67.0
+TCGA-GBM-P371,Dead,38.0,male,none,0,99.0
+TCGA-GBM-P372,Alive,38.0,female,"radiation, chemotherapy",1,84.0
+TCGA-GBM-P373,Alive,37.0,male,"radiation, chemotherapy",1,91.0
+TCGA-GBM-P374,Alive,37.0,female,"radiation, chemotherapy",1,86.0
+TCGA-GBM-P375,Alive,63.0,male,"radiation, chemotherapy",1,91.0
+TCGA-GBM-P376,Dead,53.0,female,none,0,80.0
+TCGA-GBM-P377,Alive,39.0,male,"radiation, chemotherapy",1,77.0
+TCGA-GBM-P378,Alive,62.0,female,"radiation, chemotherapy",1,81.0
+TCGA-GBM-P379,Alive,55.0,male,"radiation, chemotherapy",1,65.0
+TCGA-GBM-P380,Alive,35.0,female,"radiation, chemotherapy",1,64.0
+TCGA-GBM-P381,Dead,75.0,male,none,0,71.0
+TCGA-GBM-P382,Alive,60.0,female,"radiation, chemotherapy",1,93.0
+TCGA-GBM-P383,Alive,48.0,male,"radiation, chemotherapy",1,85.0
+TCGA-GBM-P384,Alive,61.0,female,"radiation, chemotherapy",1,68.0
+TCGA-GBM-P385,Alive,60.0,male,"radiation, chemotherapy",1,81.0
+TCGA-GBM-P386,Dead,64.0,female,none,0,76.0
+TCGA-GBM-P387,Alive,60.0,male,"radiation, chemotherapy",1,95.0
+TCGA-GBM-P388,Alive,35.0,female,"radiation, chemotherapy",1,67.0
+TCGA-GBM-P389,Alive,69.0,male,"radiation, chemotherapy",1,74.0
+TCGA-GBM-P390,Alive,56.0,female,"radiation, chemotherapy",1,73.0
+TCGA-GBM-P391,Dead,60.0,male,none,0,87.0
+TCGA-GBM-P392,Alive,57.0,female,"radiation, chemotherapy",1,73.0
+TCGA-GBM-P393,Alive,58.0,male,"radiation, chemotherapy",1,61.0
+TCGA-GBM-P394,Alive,60.0,female,"radiation, chemotherapy",1,73.0
+TCGA-GBM-P395,Alive,41.0,male,"radiation, chemotherapy",1,62.0
+TCGA-GBM-P396,Dead,57.0,female,none,0,77.0
+TCGA-GBM-P397,Alive,72.0,male,"radiation, chemotherapy",1,94.0
+TCGA-GBM-P398,Alive,49.0,female,"radiation, chemotherapy",1,84.0
+TCGA-GBM-P399,Alive,71.0,male,"radiation, chemotherapy",1,87.0
+TCGA-GBM-P400,Alive,44.0,female,"radiation, chemotherapy",1,98.0
+TCGA-GBM-P401,Dead,51.0,male,none,0,98.0
+TCGA-GBM-P402,Alive,56.0,female,"radiation, chemotherapy",1,85.0
+TCGA-GBM-P403,Alive,59.0,male,"radiation, chemotherapy",1,76.0
+TCGA-GBM-P404,Alive,47.0,female,"radiation, chemotherapy",1,79.0
+TCGA-GBM-P405,Alive,59.0,male,"radiation, chemotherapy",1,63.0
+TCGA-GBM-P406,Dead,44.0,female,none,0,62.0
+TCGA-GBM-P407,Alive,75.0,male,"radiation, chemotherapy",1,77.0
+TCGA-GBM-P408,Alive,70.0,female,"radiation, chemotherapy",1,81.0
+TCGA-GBM-P409,Alive,68.0,male,"radiation, chemotherapy",1,67.0
+TCGA-GBM-P410,Alive,74.0,female,"radiation, chemotherapy",1,78.0
+TCGA-GBM-P411,Dead,76.0,male,none,0,96.0
+TCGA-GBM-P412,Alive,40.0,female,"radiation, chemotherapy",1,85.0
+TCGA-GBM-P413,Alive,68.0,male,"radiation, chemotherapy",1,65.0
+TCGA-GBM-P414,Alive,71.0,female,"radiation, chemotherapy",1,92.0
+TCGA-GBM-P415,Alive,56.0,male,"radiation, chemotherapy",1,80.0
+TCGA-GBM-P416,Dead,40.0,female,none,0,65.0
+TCGA-GBM-P417,Alive,38.0,male,"radiation, chemotherapy",1,89.0
+TCGA-GBM-P418,Alive,45.0,female,"radiation, chemotherapy",1,89.0
+TCGA-GBM-P419,Alive,65.0,male,"radiation, chemotherapy",1,83.0
+TCGA-GBM-P420,Alive,43.0,female,"radiation, chemotherapy",1,62.0
+TCGA-GBM-P421,Dead,65.0,male,none,0,99.0
+TCGA-GBM-P422,Alive,71.0,female,"radiation, chemotherapy",1,95.0
+TCGA-GBM-P423,Alive,58.0,male,"radiation, chemotherapy",1,90.0
+TCGA-GBM-P424,Alive,40.0,female,"radiation, chemotherapy",1,61.0
+TCGA-GBM-P425,Alive,54.0,male,"radiation, chemotherapy",1,87.0
+TCGA-GBM-P426,Dead,45.0,female,none,0,63.0
+TCGA-GBM-P427,Alive,49.0,male,"radiation, chemotherapy",1,65.0
+TCGA-GBM-P428,Alive,64.0,female,"radiation, chemotherapy",1,97.0
+TCGA-GBM-P429,Alive,36.0,male,"radiation, chemotherapy",1,74.0
+TCGA-GBM-P430,Alive,45.0,female,"radiation, chemotherapy",1,67.0
+TCGA-GBM-P431,Dead,60.0,male,none,0,64.0
+TCGA-GBM-P432,Alive,40.0,female,"radiation, chemotherapy",1,85.0
+TCGA-GBM-P433,Alive,38.0,male,"radiation, chemotherapy",1,78.0
+TCGA-GBM-P434,Alive,54.0,female,"radiation, chemotherapy",1,92.0
+TCGA-GBM-P435,Alive,54.0,male,"radiation, chemotherapy",1,71.0
+TCGA-GBM-P436,Dead,35.0,female,none,0,85.0
+TCGA-GBM-P437,Alive,48.0,male,"radiation, chemotherapy",1,97.0
+TCGA-GBM-P438,Alive,71.0,female,"radiation, chemotherapy",1,70.0
+TCGA-GBM-P439,Alive,70.0,male,"radiation, chemotherapy",1,72.0
+TCGA-GBM-P440,Alive,77.0,female,"radiation, chemotherapy",1,62.0
+TCGA-GBM-P441,Dead,67.0,male,none,0,65.0
+TCGA-GBM-P442,Alive,44.0,female,"radiation, chemotherapy",1,64.0
+TCGA-GBM-P443,Alive,57.0,male,"radiation, chemotherapy",1,69.0
+TCGA-GBM-P444,Alive,36.0,female,"radiation, chemotherapy",1,72.0
+TCGA-GBM-P445,Alive,74.0,male,"radiation, chemotherapy",1,61.0
+TCGA-GBM-P446,Dead,54.0,female,none,0,60.0
+TCGA-GBM-P447,Alive,71.0,male,"radiation, chemotherapy",1,68.0
+TCGA-GBM-P448,Alive,51.0,female,"radiation, chemotherapy",1,68.0
+TCGA-GBM-P449,Alive,45.0,male,"radiation, chemotherapy",1,74.0
+TCGA-GBM-P450,Alive,58.0,female,"radiation, chemotherapy",1,97.0
+TCGA-GBM-P451,Dead,69.0,male,none,0,89.0
+TCGA-GBM-P452,Alive,65.0,female,"radiation, chemotherapy",1,64.0
+TCGA-GBM-P453,Alive,48.0,male,"radiation, chemotherapy",1,70.0
+TCGA-GBM-P454,Alive,43.0,female,"radiation, chemotherapy",1,93.0
+TCGA-GBM-P455,Alive,46.0,male,"radiation, chemotherapy",1,94.0
+TCGA-GBM-P456,Dead,69.0,female,none,0,60.0
+TCGA-GBM-P457,Alive,74.0,male,"radiation, chemotherapy",1,81.0
+TCGA-GBM-P458,Alive,63.0,female,"radiation, chemotherapy",1,67.0
+TCGA-GBM-P459,Alive,45.0,male,"radiation, chemotherapy",1,96.0
+TCGA-GBM-P460,Alive,48.0,female,"radiation, chemotherapy",1,89.0
+TCGA-GBM-P461,Dead,69.0,male,none,0,80.0
+TCGA-GBM-P462,Alive,71.0,female,"radiation, chemotherapy",1,64.0
+TCGA-GBM-P463,Alive,53.0,male,"radiation, chemotherapy",1,73.0
+TCGA-GBM-P464,Alive,60.0,female,"radiation, chemotherapy",1,63.0
+TCGA-GBM-P465,Alive,59.0,male,"radiation, chemotherapy",1,84.0
+TCGA-GBM-P466,Dead,52.0,female,none,0,99.0
+TCGA-GBM-P467,Alive,42.0,male,"radiation, chemotherapy",1,98.0
+TCGA-GBM-P468,Alive,74.0,female,"radiation, chemotherapy",1,73.0
+TCGA-GBM-P469,Alive,66.0,male,"radiation, chemotherapy",1,97.0
+TCGA-GBM-P470,Alive,67.0,female,"radiation, chemotherapy",1,82.0
+TCGA-GBM-P471,Dead,49.0,male,none,0,92.0
+TCGA-GBM-P472,Alive,59.0,female,"radiation, chemotherapy",1,76.0
+TCGA-GBM-P473,Alive,67.0,male,"radiation, chemotherapy",1,61.0
+TCGA-GBM-P474,Alive,48.0,female,"radiation, chemotherapy",1,99.0
+TCGA-GBM-P475,Alive,74.0,male,"radiation, chemotherapy",1,98.0
+TCGA-GBM-P476,Dead,40.0,female,none,0,65.0
+TCGA-GBM-P477,Alive,37.0,male,"radiation, chemotherapy",1,66.0
+TCGA-GBM-P478,Alive,42.0,female,"radiation, chemotherapy",1,74.0
+TCGA-GBM-P479,Alive,63.0,male,"radiation, chemotherapy",1,92.0
+TCGA-GBM-P480,Alive,64.0,female,"radiation, chemotherapy",1,98.0
+TCGA-GBM-P481,Dead,61.0,male,none,0,95.0
+TCGA-GBM-P482,Alive,63.0,female,"radiation, chemotherapy",1,97.0
+TCGA-GBM-P483,Alive,67.0,male,"radiation, chemotherapy",1,96.0
+TCGA-GBM-P484,Alive,61.0,female,"radiation, chemotherapy",1,92.0
+TCGA-GBM-P485,Alive,38.0,male,"radiation, chemotherapy",1,81.0
+TCGA-GBM-P486,Dead,36.0,female,none,0,69.0
+TCGA-GBM-P487,Alive,39.0,male,"radiation, chemotherapy",1,69.0
+TCGA-GBM-P488,Alive,67.0,female,"radiation, chemotherapy",1,97.0
+TCGA-GBM-P489,Alive,47.0,male,"radiation, chemotherapy",1,90.0
+TCGA-GBM-P490,Alive,70.0,female,"radiation, chemotherapy",1,83.0
+TCGA-GBM-P491,Dead,49.0,male,none,0,88.0
+TCGA-GBM-P492,Alive,42.0,female,"radiation, chemotherapy",1,64.0
+TCGA-GBM-P493,Alive,63.0,male,"radiation, chemotherapy",1,63.0
+TCGA-GBM-P494,Alive,46.0,female,"radiation, chemotherapy",1,61.0
+TCGA-GBM-P495,Alive,61.0,male,"radiation, chemotherapy",1,90.0
+TCGA-GBM-P496,Dead,70.0,female,none,0,95.0
+TCGA-GBM-P497,Alive,60.0,male,"radiation, chemotherapy",1,86.0
+TCGA-GBM-P498,Alive,39.0,female,"radiation, chemotherapy",1,79.0
+TCGA-GBM-P499,Alive,45.0,male,"radiation, chemotherapy",1,69.0
+TCGA-GBM-P500,Alive,74.0,female,"radiation, chemotherapy",1,97.0
+TCGA-GBM-P501,Dead,40.0,male,none,0,67.0
+TCGA-GBM-P502,Alive,57.0,female,"radiation, chemotherapy",1,85.0
+TCGA-GBM-P503,Alive,77.0,male,"radiation, chemotherapy",1,71.0
+TCGA-GBM-P504,Alive,60.0,female,"radiation, chemotherapy",1,72.0
+TCGA-GBM-P505,Alive,74.0,male,"radiation, chemotherapy",1,77.0
+TCGA-GBM-P506,Dead,59.0,female,none,0,92.0
+TCGA-GBM-P507,Alive,74.0,male,"radiation, chemotherapy",1,71.0
+TCGA-GBM-P508,Alive,70.0,female,"radiation, chemotherapy",1,63.0
+TCGA-GBM-P509,Alive,39.0,male,"radiation, chemotherapy",1,96.0
+TCGA-GBM-P510,Alive,42.0,female,"radiation, chemotherapy",1,87.0
+TCGA-GBM-P511,Dead,65.0,male,none,0,68.0
+TCGA-GBM-P512,Alive,63.0,female,"radiation, chemotherapy",1,73.0
+TCGA-GBM-P513,Alive,74.0,male,"radiation, chemotherapy",1,81.0
+TCGA-GBM-P514,Alive,45.0,female,"radiation, chemotherapy",1,82.0
+TCGA-GBM-P515,Alive,35.0,male,"radiation, chemotherapy",1,96.0
+TCGA-GBM-P516,Dead,55.0,female,none,0,85.0
+TCGA-GBM-P517,Alive,70.0,male,"radiation, chemotherapy",1,82.0
+TCGA-GBM-P518,Alive,35.0,female,"radiation, chemotherapy",1,99.0
+TCGA-GBM-P519,Alive,49.0,male,"radiation, chemotherapy",1,80.0
+TCGA-GBM-P520,Alive,43.0,female,"radiation, chemotherapy",1,68.0
+TCGA-GBM-P521,Dead,44.0,male,none,0,85.0
+TCGA-GBM-P522,Alive,75.0,female,"radiation, chemotherapy",1,94.0
+TCGA-GBM-P523,Alive,59.0,male,"radiation, chemotherapy",1,85.0
+TCGA-GBM-P524,Alive,45.0,female,"radiation, chemotherapy",1,97.0
+TCGA-GBM-P525,Alive,36.0,male,"radiation, chemotherapy",1,66.0
+TCGA-GBM-P526,Dead,52.0,female,none,0,86.0
+TCGA-GBM-P527,Alive,68.0,male,"radiation, chemotherapy",1,86.0
+TCGA-GBM-P528,Alive,51.0,female,"radiation, chemotherapy",1,83.0
+TCGA-GBM-P529,Alive,59.0,male,"radiation, chemotherapy",1,66.0
+TCGA-GBM-P530,Alive,40.0,female,"radiation, chemotherapy",1,83.0
+TCGA-GBM-P531,Dead,67.0,male,none,0,88.0
+TCGA-GBM-P532,Alive,77.0,female,"radiation, chemotherapy",1,81.0
+TCGA-GBM-P533,Alive,60.0,male,"radiation, chemotherapy",1,87.0
+TCGA-GBM-P534,Alive,55.0,female,"radiation, chemotherapy",1,66.0
+TCGA-GBM-P535,Alive,51.0,male,"radiation, chemotherapy",1,79.0
+TCGA-GBM-P536,Dead,75.0,female,none,0,79.0
+TCGA-GBM-P537,Alive,56.0,male,"radiation, chemotherapy",1,87.0
+TCGA-GBM-P538,Alive,74.0,female,"radiation, chemotherapy",1,66.0
+TCGA-GBM-P539,Alive,35.0,male,"radiation, chemotherapy",1,91.0
+TCGA-GBM-P540,Alive,47.0,female,"radiation, chemotherapy",1,89.0
+TCGA-GBM-P541,Dead,57.0,male,none,0,78.0
+TCGA-GBM-P542,Alive,66.0,female,"radiation, chemotherapy",1,89.0
+TCGA-GBM-P543,Alive,63.0,male,"radiation, chemotherapy",1,88.0
+TCGA-GBM-P544,Alive,64.0,female,"radiation, chemotherapy",1,75.0
+TCGA-GBM-P545,Alive,74.0,male,"radiation, chemotherapy",1,78.0
+TCGA-GBM-P546,Dead,52.0,female,none,0,60.0
+TCGA-GBM-P547,Alive,48.0,male,"radiation, chemotherapy",1,61.0
+TCGA-GBM-P548,Alive,62.0,female,"radiation, chemotherapy",1,89.0
+TCGA-GBM-P549,Alive,72.0,male,"radiation, chemotherapy",1,63.0
+TCGA-GBM-P550,Alive,35.0,female,"radiation, chemotherapy",1,67.0
+TCGA-GBM-P551,Dead,63.0,male,none,0,98.0
+TCGA-GBM-P552,Alive,37.0,female,"radiation, chemotherapy",1,91.0
+TCGA-GBM-P553,Alive,44.0,male,"radiation, chemotherapy",1,69.0
+TCGA-GBM-P554,Alive,53.0,female,"radiation, chemotherapy",1,93.0
+TCGA-GBM-P555,Alive,67.0,male,"radiation, chemotherapy",1,82.0
+TCGA-GBM-P556,Dead,62.0,female,none,0,91.0
+TCGA-GBM-P557,Alive,41.0,male,"radiation, chemotherapy",1,88.0
+TCGA-GBM-P558,Alive,42.0,female,"radiation, chemotherapy",1,60.0
+TCGA-GBM-P559,Alive,37.0,male,"radiation, chemotherapy",1,83.0
+TCGA-GBM-P560,Alive,57.0,female,"radiation, chemotherapy",1,67.0
+TCGA-GBM-P561,Dead,71.0,male,none,0,62.0
+TCGA-GBM-P562,Alive,67.0,female,"radiation, chemotherapy",1,87.0
+TCGA-GBM-P563,Alive,42.0,male,"radiation, chemotherapy",1,93.0
+TCGA-GBM-P564,Alive,69.0,female,"radiation, chemotherapy",1,91.0
+TCGA-GBM-P565,Alive,58.0,male,"radiation, chemotherapy",1,73.0
+TCGA-GBM-P566,Dead,66.0,female,none,0,75.0
+TCGA-GBM-P567,Alive,38.0,male,"radiation, chemotherapy",1,96.0
+TCGA-GBM-P568,Alive,55.0,female,"radiation, chemotherapy",1,73.0
+TCGA-GBM-P569,Alive,65.0,male,"radiation, chemotherapy",1,77.0
+TCGA-GBM-P570,Alive,41.0,female,"radiation, chemotherapy",1,69.0
+TCGA-GBM-P571,Dead,41.0,male,none,0,92.0
+TCGA-GBM-P572,Alive,57.0,female,"radiation, chemotherapy",1,80.0
+TCGA-GBM-P573,Alive,53.0,male,"radiation, chemotherapy",1,78.0
+TCGA-GBM-P574,Alive,70.0,female,"radiation, chemotherapy",1,88.0

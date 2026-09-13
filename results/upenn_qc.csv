@@ -1,0 +1,57 @@
+patient_id,exclusion_stage,exclusion_reason,status
+UPenn-GBM-00014,Stage 2: Survival Availability,Missing survival follow-up duration (days),Excluded
+UPenn-GBM-00028,Stage 2: Survival Availability,Missing survival follow-up duration (days),Excluded
+UPenn-GBM-00041,Stage 2: Survival Availability,Missing survival follow-up duration (days),Excluded
+UPenn-GBM-00055,Stage 2: Survival Availability,Missing survival follow-up duration (days),Excluded
+UPenn-GBM-00072,Stage 2: Survival Availability,Missing survival follow-up duration (days),Excluded
+UPenn-GBM-00089,Stage 2: Survival Availability,Missing survival follow-up duration (days),Excluded
+UPenn-GBM-00103,Stage 2: Survival Availability,Missing survival follow-up duration (days),Excluded
+UPenn-GBM-00118,Stage 2: Survival Availability,Missing survival follow-up duration (days),Excluded
+UPenn-GBM-00134,Stage 2: Survival Availability,Missing survival follow-up duration (days),Excluded
+UPenn-GBM-00150,Stage 2: Survival Availability,Missing survival follow-up duration (days),Excluded
+UPenn-GBM-00167,Stage 2: Survival Availability,Missing survival follow-up duration (days),Excluded
+UPenn-GBM-00182,Stage 2: Survival Availability,Missing survival follow-up duration (days),Excluded
+UPenn-GBM-00199,Stage 2: Survival Availability,Missing survival follow-up duration (days),Excluded
+UPenn-GBM-00215,Stage 2: Survival Availability,Missing survival follow-up duration (days),Excluded
+UPenn-GBM-00231,Stage 2: Survival Availability,Missing survival follow-up duration (days),Excluded
+UPenn-GBM-00248,Stage 2: Survival Availability,Missing survival follow-up duration (days),Excluded
+UPenn-GBM-00264,Stage 2: Survival Availability,Missing survival follow-up duration (days),Excluded
+UPenn-GBM-00280,Stage 2: Survival Availability,Missing survival follow-up duration (days),Excluded
+UPenn-GBM-00295,Stage 3: Event Status,Unspecified censoring/event flag,Excluded
+UPenn-GBM-00311,Stage 4: 3D MRI Availability,Missing baseline pre-op FLAIR NIfTI volume,Excluded
+UPenn-GBM-00327,Stage 4: 3D MRI Availability,Missing baseline pre-op T1ce NIfTI volume,Excluded
+UPenn-GBM-00343,Stage 4: 3D MRI Availability,Missing baseline pre-op T2 NIfTI volume,Excluded
+UPenn-GBM-00359,Stage 4: 3D MRI Availability,Incomplete 3D MRI sequence set,Excluded
+UPenn-GBM-00375,Stage 4: 3D MRI Availability,Incomplete 3D MRI sequence set,Excluded
+UPenn-GBM-00391,Stage 4: 3D MRI Availability,Incomplete 3D MRI sequence set,Excluded
+UPenn-GBM-00407,Stage 4: 3D MRI Availability,Incomplete 3D MRI sequence set,Excluded
+UPenn-GBM-00423,Stage 4: 3D MRI Availability,Incomplete 3D MRI sequence set,Excluded
+UPenn-GBM-00439,Stage 4: 3D MRI Availability,Incomplete 3D MRI sequence set,Excluded
+UPenn-GBM-00455,Stage 4: 3D MRI Availability,Incomplete 3D MRI sequence set,Excluded
+UPenn-GBM-00471,Stage 4: 3D MRI Availability,Incomplete 3D MRI sequence set,Excluded
+UPenn-GBM-00487,Stage 4: 3D MRI Availability,Incomplete 3D MRI sequence set,Excluded
+UPenn-GBM-00503,Stage 4: 3D MRI Availability,Incomplete 3D MRI sequence set,Excluded
+UPenn-GBM-00519,Stage 4: 3D MRI Availability,Incomplete 3D MRI sequence set,Excluded
+UPenn-GBM-00535,Stage 4: 3D MRI Availability,Incomplete 3D MRI sequence set,Excluded
+UPenn-GBM-00551,Stage 4: 3D MRI Availability,Incomplete 3D MRI sequence set,Excluded
+UPenn-GBM-00567,Stage 4: 3D MRI Availability,Incomplete 3D MRI sequence set,Excluded
+UPenn-GBM-00583,Stage 4: 3D MRI Availability,Incomplete 3D MRI sequence set,Excluded
+UPenn-GBM-00305,Stage 5: Tumor Segmentation,Corrupted NIfTI segmentation mask header,Excluded
+UPenn-GBM-00321,Stage 5: Tumor Segmentation,Missing automated tumor segmentation mask,Excluded
+UPenn-GBM-00337,Stage 5: Tumor Segmentation,Missing automated tumor segmentation mask,Excluded
+UPenn-GBM-00353,Stage 5: Tumor Segmentation,Empty tumor segmentation mask (0 voxels),Excluded
+UPenn-GBM-00369,Stage 5: Tumor Segmentation,Empty tumor segmentation mask (0 voxels),Excluded
+UPenn-GBM-00385,Stage 5: Tumor Segmentation,Corrupted segmentation file,Excluded
+UPenn-GBM-00401,Stage 5: Tumor Segmentation,Missing tumor segmentation mask,Excluded
+UPenn-GBM-00417,Stage 5: Tumor Segmentation,Missing tumor segmentation mask,Excluded
+UPenn-GBM-00433,Stage 5: Tumor Segmentation,Corrupted segmentation file,Excluded
+UPenn-GBM-00449,Stage 5: Tumor Segmentation,Missing tumor segmentation mask,Excluded
+UPenn-GBM-00465,Stage 5: Tumor Segmentation,Missing tumor segmentation mask,Excluded
+UPenn-GBM-00112,Stage 6: Artifact QC,Severe field distortion / motion artifact,Excluded
+UPenn-GBM-00224,Stage 6: Artifact QC,Severe motion artifact across T1ce,Excluded
+UPenn-GBM-00336,Stage 6: Artifact QC,Incomplete brain coverage / truncated FOV,Excluded
+UPenn-GBM-00045,Stage 8: PyRadiomics Extraction,Mesh surface reconstruction failure (discontinuous mask),Excluded
+UPenn-GBM-00138,Stage 8: PyRadiomics Extraction,Mesh surface reconstruction failure (discontinuous mask),Excluded
+UPenn-GBM-00251,Stage 8: PyRadiomics Extraction,GLCM matrix calculation error (single voxel ROI),Excluded
+UPenn-GBM-00364,Stage 8: PyRadiomics Extraction,GLSZM calculation error (single voxel ROI),Excluded
+UPenn-GBM-00477,Stage 8: PyRadiomics Extraction,Mesh surface reconstruction failure (discontinuous mask),Excluded

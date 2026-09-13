@@ -1,0 +1,10 @@
+level,client,N,q,C,S,DeltaS,sigma,delta,total_steps,epsilon,accountant
+Patient-Level DP,TCGA,77,0.2077922077922078,1.0,,,0.05,1e-05,750,152149.24,Opacus v1.6.0 RDP
+Patient-Level DP,UPenn,460,0.034782608695652174,1.0,,,0.05,1e-05,4350,796400.96,Opacus v1.6.0 RDP
+Patient-Level DP,TCGA,77,0.2077922077922078,1.0,,,0.1,1e-05,750,28531.65,Opacus v1.6.0 RDP
+Patient-Level DP,UPenn,460,0.034782608695652174,1.0,,,0.1,1e-05,4350,85036.44,Opacus v1.6.0 RDP
+Patient-Level DP,TCGA,77,0.2077922077922078,1.0,,,0.2,1e-05,750,3040.33,Opacus v1.6.0 RDP
+Patient-Level DP,UPenn,460,0.034782608695652174,1.0,,,0.2,1e-05,4350,2674.03,Opacus v1.6.0 RDP
+Client-Level DP,TCGA+UPenn,2,1.0,,1.0,1.7132216,0.05,1e-05,30,6525.652176975692,Closed-Form Gaussian RDP (Adjacency A)
+Client-Level DP,TCGA+UPenn,2,1.0,,1.0,1.7132216,0.1,1e-05,30,1762.8260884878464,Closed-Form Gaussian RDP (Adjacency A)
+Client-Level DP,TCGA+UPenn,2,1.0,,1.0,1.7132216,0.2,1e-05,30,506.4130442439232,Closed-Form Gaussian RDP (Adjacency A)

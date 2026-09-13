@@ -1,0 +1,13 @@
+{
+  "tcga_train_n": 77,
+  "tcga_test_n": 20,
+  "upenn_train_n": 460,
+  "upenn_test_n": 114,
+  "tcga_test_class_0": 4,
+  "tcga_test_class_1": 16,
+  "upenn_test_class_0": 12,
+  "upenn_test_class_1": 102,
+  "tcga_test_sha256": "b8b9862cb3c9a0aa1650c9adf7535ac2867a607f8d8ba52e0e182d4cbab8a518",
+  "upenn_test_sha256": "569a2ce4f7c0edecc7b5bd836c231dde0f69eeb80b7b7782bafe7711544c3165",
+  "identical_test_ids_across_all_seeds": true
+}

@@ -1,0 +1,30 @@
+=====================================================================================
+FED-GBM V3 PHASE 7.4 DEFINITIVE MASTER RESEARCH EXPERIMENT BENCHMARK
+Output Directory: C:\Users\NISARG\FED_GBM_ANTIgravity_project\results\v3\phase7_final
+Seeds: [42, 123, 2024, 3407, 9999]
+Models Evaluated: 12
+=====================================================================================
+Saved split verification manifest to C:\Users\NISARG\FED_GBM_ANTIgravity_project\results\v3\phase7_final\split_verification.json
+Saved feature provenance manifest to C:\Users\NISARG\FED_GBM_ANTIgravity_project\results\v3\phase7_final\feature_provenance.json
+
+>>> EXECUTING RANDOM SEED: 42 <<<
+  Seed 42 complete!
+
+>>> EXECUTING RANDOM SEED: 123 <<<
+  Seed 123 complete!
+
+>>> EXECUTING RANDOM SEED: 2024 <<<
+  Seed 2024 complete!
+
+>>> EXECUTING RANDOM SEED: 3407 <<<
+  Seed 3407 complete!
+
+>>> EXECUTING RANDOM SEED: 9999 <<<
+  Seed 9999 complete!
+
+Execution Finished in 412.69 seconds.
+Saved per-seed results (120 rows) to C:\Users\NISARG\FED_GBM_ANTIgravity_project\results\v3\phase7_final\phase7_per_seed_results.csv
+Saved aggregate summary results (24 rows) to C:\Users\NISARG\FED_GBM_ANTIgravity_project\results\v3\phase7_final\phase7_aggregate_results.csv
+Saved aggregation verification manifest to C:\Users\NISARG\FED_GBM_ANTIgravity_project\results\v3\phase7_final\aggregation_verification.json
+Saved privacy accounting results to C:\Users\NISARG\FED_GBM_ANTIgravity_project\results\v3\phase7_final\phase7_privacy_results.csv
+Saved configuration manifest to C:\Users\NISARG\FED_GBM_ANTIgravity_project\results\v3\phase7_final\phase7_config.json

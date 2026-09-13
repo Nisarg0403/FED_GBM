@@ -1,0 +1,44 @@
+{
+  "total_features_selected": 15,
+  "clinical_features_count": 4,
+  "radiomic_features_count": 11,
+  "fitting_dataset": "TCGA Train Only",
+  "fitting_sample_count": 77,
+  "test_or_external_data_accessed_for_selection": false,
+  "protected_clinical_features": [
+    "Age",
+    "Gender",
+    "KPS",
+    "Resection_Status"
+  ],
+  "selected_radiomic_features": [
+    "rad_feat_238",
+    "rad_feat_043",
+    "rad_feat_378",
+    "rad_feat_375",
+    "rad_feat_161",
+    "rad_feat_427",
+    "rad_feat_714",
+    "rad_feat_057",
+    "rad_feat_249",
+    "rad_feat_127",
+    "rad_feat_117"
+  ],
+  "final_locked_feature_schema": [
+    "Age",
+    "Gender",
+    "KPS",
+    "Resection_Status",
+    "rad_feat_238",
+    "rad_feat_043",
+    "rad_feat_378",
+    "rad_feat_375",
+    "rad_feat_161",
+    "rad_feat_427",
+    "rad_feat_714",
+    "rad_feat_057",
+    "rad_feat_249",
+    "rad_feat_127",
+    "rad_feat_117"
+  ]
+}
