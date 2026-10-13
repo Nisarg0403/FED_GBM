@@ -1,6 +1,0 @@
-Dataset,Model,Internal 5-Fold CV AUC,Federated External AUC,Generalization Gap
-TCGA,Centralized XGBoost,0.885 ± 0.012,0.842 ± 0.012,0.043 (4.8%)
-TCGA,Centralized MLP,0.852 ± 0.015,0.842 ± 0.012,0.010 (1.2%)
-UPenn,Centralized XGBoost,0.758 ± 0.018,0.735 ± 0.016,0.023 (3.0%)
-UPenn,Centralized MLP,0.742 ± 0.021,0.735 ± 0.016,0.007 (0.9%)
-CGGA,Centralized MLP,0.730 ± 0.025,0.720 ± 0.022,0.010 (1.4%)

@@ -24,9 +24,9 @@ import torch.nn as nn
 
 from fed_gbm.models import SurvivalMLP, set_seed
 from fed_gbm.client_dp import ClientUpdateClipper, ClientDPFedAvg, ClientDPAccountant
-from tests.test_fedavg import run_all_phase_3_tests
-from tests.test_fedprox import run_all_phase_4_tests
-from tests.test_dp_sgd import run_all_phase_5_1_tests
+from tests.unit.test_fedavg import run_all_phase_3_tests
+from tests.unit.test_fedprox import run_all_phase_4_tests
+from tests.unit.test_dp_sgd import run_all_phase_5_1_tests
 
 
 def test_1_zero_update_remains_zero():

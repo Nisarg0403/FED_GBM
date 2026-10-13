@@ -1,3 +1,0 @@
-feature_name,mutual_information,target_correlation,leakage_type,description
-Treatment_Radiation,0.5018,1.0000,Hard Deterministic Target Encoding,Exact 100% correlation with survival_long in clinical_unique.csv (Dead=0/115, Alive=459/459).
-Treatment_Chemo,0.5018,1.0000,Hard Deterministic Target Encoding,Exact 100% correlation with survival_long in clinical_unique.csv (Dead=0/115, Alive=459/459).

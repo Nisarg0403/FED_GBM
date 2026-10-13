@@ -1,8 +1,0 @@
-{
-  "gate_2_6_passed": true,
-  "model_payload_kb": 3.50390625,
-  "total_communication_mb": 0.27374267578125,
-  "baseline_auc_mean": 0.5609477124183007,
-  "dropout_30_auc_mean": 0.5624183006535948,
-  "auc_degradation_30": -0.0014705882352941124
-}

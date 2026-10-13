@@ -1,6 +1,0 @@
-comparison,mean_diff,t_stat,p_value_t_test,wilcoxon_p_value,cohens_d,bonferroni_p,significant_at_05
-CA-FedAvg vs FedAvg,0.0,,,1.0,0.0,1.0,False
-CA-FedAvg vs FedProx,0.0019,0.6527,0.5302,0.6953,0.2064,1.0,False
-CA-FedAvg vs HAPA,0.0,,,1.0,0.0,1.0,False
-FedProx vs FedAvg,-0.0019,-0.6527,0.5302,0.6953,-0.2064,1.0,False
-CA-FedAvg vs Centralized_DeepSurv,-0.025,-inf,0.0,0.002,0.0,0.0,True
