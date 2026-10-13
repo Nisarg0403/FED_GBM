@@ -155,8 +155,8 @@ All clinical and technical documentation has been reviewed and structured for pe
 If you use FED-GBM in your research, please cite:
 
 ```bibtex
-@software{chaudhari2026fedgbm,
-  author = {Chaudhari, Nisarg},
+@software{vakharia2026fedgbm,
+  author = {Vakharia, Nisarg},
   title = {{FED-GBM: Privacy-Preserving Federated Learning for Glioblastoma Multiforme Prognosis Across Multi-Institutional Cohorts}},
   year = {2026},
   url = {https://github.com/Nisarg0403/FED_GBM},
