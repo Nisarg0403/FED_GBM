@@ -1,0 +1,130 @@
+{
+  "audit_summary": [
+    {
+      "seed": 42,
+      "alpha": 0.1,
+      "tcga_auc": 1.0,
+      "tcga_acc": 1.0,
+      "tcga_sens": 1.0,
+      "tcga_spec": 1.0,
+      "upenn_auc": 0.5416666666666667,
+      "upenn_acc": 0.45614035087719296,
+      "upenn_sens": 0.4411764705882353,
+      "upenn_spec": 0.5833333333333334
+    },
+    {
+      "seed": 42,
+      "alpha": 0.5,
+      "tcga_auc": 1.0,
+      "tcga_acc": 1.0,
+      "tcga_sens": 1.0,
+      "tcga_spec": 1.0,
+      "upenn_auc": 0.5649509803921569,
+      "upenn_acc": 0.6666666666666666,
+      "upenn_sens": 0.696078431372549,
+      "upenn_spec": 0.4166666666666667
+    },
+    {
+      "seed": 101,
+      "alpha": 0.1,
+      "tcga_auc": 1.0,
+      "tcga_acc": 1.0,
+      "tcga_sens": 1.0,
+      "tcga_spec": 1.0,
+      "upenn_auc": 0.5134803921568628,
+      "upenn_acc": 0.5263157894736842,
+      "upenn_sens": 0.5196078431372549,
+      "upenn_spec": 0.5833333333333334
+    },
+    {
+      "seed": 101,
+      "alpha": 0.5,
+      "tcga_auc": 1.0,
+      "tcga_acc": 1.0,
+      "tcga_sens": 1.0,
+      "tcga_spec": 1.0,
+      "upenn_auc": 0.49468954248366004,
+      "upenn_acc": 0.47368421052631576,
+      "upenn_sens": 0.46078431372549017,
+      "upenn_spec": 0.5833333333333334
+    },
+    {
+      "seed": 2024,
+      "alpha": 0.1,
+      "tcga_auc": 1.0,
+      "tcga_acc": 1.0,
+      "tcga_sens": 1.0,
+      "tcga_spec": 1.0,
+      "upenn_auc": 0.5420751633986928,
+      "upenn_acc": 0.45614035087719296,
+      "upenn_sens": 0.43137254901960786,
+      "upenn_spec": 0.6666666666666666
+    },
+    {
+      "seed": 2024,
+      "alpha": 0.5,
+      "tcga_auc": 1.0,
+      "tcga_acc": 1.0,
+      "tcga_sens": 1.0,
+      "tcga_spec": 1.0,
+      "upenn_auc": 0.508578431372549,
+      "upenn_acc": 0.4824561403508772,
+      "upenn_sens": 0.46078431372549017,
+      "upenn_spec": 0.6666666666666666
+    },
+    {
+      "seed": 777,
+      "alpha": 0.1,
+      "tcga_auc": 1.0,
+      "tcga_acc": 0.6608695652173913,
+      "tcga_sens": 0.5760869565217391,
+      "tcga_spec": 1.0,
+      "upenn_auc": 0.5400326797385622,
+      "upenn_acc": 0.22807017543859648,
+      "upenn_sens": 0.14705882352941177,
+      "upenn_spec": 0.9166666666666666
+    },
+    {
+      "seed": 777,
+      "alpha": 0.5,
+      "tcga_auc": 1.0,
+      "tcga_acc": 1.0,
+      "tcga_sens": 1.0,
+      "tcga_spec": 1.0,
+      "upenn_auc": 0.5808823529411765,
+      "upenn_acc": 0.4473684210526316,
+      "upenn_sens": 0.4215686274509804,
+      "upenn_spec": 0.6666666666666666
+    },
+    {
+      "seed": 999,
+      "alpha": 0.1,
+      "tcga_auc": 1.0,
+      "tcga_acc": 1.0,
+      "tcga_sens": 1.0,
+      "tcga_spec": 1.0,
+      "upenn_auc": 0.5155228758169934,
+      "upenn_acc": 0.4824561403508772,
+      "upenn_sens": 0.46078431372549017,
+      "upenn_spec": 0.6666666666666666
+    },
+    {
+      "seed": 999,
+      "alpha": 0.5,
+      "tcga_auc": 1.0,
+      "tcga_acc": 1.0,
+      "tcga_sens": 1.0,
+      "tcga_spec": 1.0,
+      "upenn_auc": 0.497140522875817,
+      "upenn_acc": 0.47368421052631576,
+      "upenn_sens": 0.45098039215686275,
+      "upenn_spec": 0.6666666666666666
+    }
+  ],
+  "tcga_auc_mean_alpha_0_1": 1.0,
+  "tcga_auc_std_alpha_0_1": 0.0,
+  "upenn_auc_mean_alpha_0_1": 0.5305555555555557,
+  "upenn_auc_std_alpha_0_1": 0.014692827357060052,
+  "tcga_spec_mean_alpha_0_1": 1.0,
+  "upenn_spec_mean_alpha_0_1": 0.6833333333333333
+}

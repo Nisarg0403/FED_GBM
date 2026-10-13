@@ -100,10 +100,10 @@ def render():
                 mode="markers+lines+text",
                 name="Patient-Level DP (DP-SGD)",
                 marker=dict(color="#d97706", size=10),
-                line=dict(color="#d97706", width=2),
+                line=dict(color="#d97706", width=2.5),
                 text=[f"σ={s}" for s in [0.05, 0.1, 0.2][:len(p_eps)]],
                 textposition="top center",
-                textfont=dict(size=11, color="#d97706"),
+                textfont=dict(size=12, color="#b45309", family="Inter, sans-serif"),
             ))
 
         # Add Client DP trace
@@ -122,21 +122,23 @@ def render():
                 mode="markers+lines+text",
                 name="Client-Level DP (DP-FedAvg)",
                 marker=dict(color="#2563eb", size=10),
-                line=dict(color="#2563eb", width=2, dash="dash"),
+                line=dict(color="#2563eb", width=2.5, dash="dash"),
                 text=[f"σ={s}" for s in [0.05, 0.1, 0.2][:len(c_eps)]],
                 textposition="top center",
-                textfont=dict(size=11, color="#2563eb"),
+                textfont=dict(size=12, color="#1d4ed8", family="Inter, sans-serif"),
             ))
 
         fig.update_layout(
             plot_bgcolor="#ffffff", paper_bgcolor="#ffffff",
-            font=dict(color="#334155", family="Inter"),
-            xaxis=dict(type="log", title="ε Epsilon (log scale — Lower = Stronger Privacy)", gridcolor="#f1f5f9"),
-            yaxis=dict(title="ROC-AUC Score", gridcolor="#e2e8f0", range=[0.3, 1.0]),
+            font=dict(color="#0f172a", size=13, family="Inter, sans-serif"),
+            title=dict(text="<b>Privacy vs. Accuracy Tradeoff (Epsilon vs. ROC-AUC)</b>", font=dict(color="#0f172a", size=16, family="Inter, sans-serif")),
+            xaxis=dict(type="log", title=dict(text="<b>ε Epsilon (log scale — Lower = Stronger Privacy)</b>", font=dict(color="#0f172a", size=14)), tickfont=dict(color="#0f172a", size=13), gridcolor="#f1f5f9"),
+            yaxis=dict(title=dict(text="<b>ROC-AUC Score</b>", font=dict(color="#0f172a", size=14)), tickfont=dict(color="#0f172a", size=13), gridcolor="#e2e8f0", range=[0.3, 1.0]),
             legend=dict(bgcolor="#ffffff", bordercolor="#cbd5e1", borderwidth=1,
-                        font=dict(color="#0f172a", size=11)),
-            height=400,
-            margin=dict(l=10, r=10, t=20, b=40),
+                        font=dict(color="#0f172a", size=13, family="Inter, sans-serif")),
+            height=440,
+            margin=dict(l=60, r=30, t=60, b=60),
+            hoverlabel=dict(bgcolor="#0f172a", font_color="#ffffff", font_size=13)
         )
         st.plotly_chart(fig, use_container_width=True)
 

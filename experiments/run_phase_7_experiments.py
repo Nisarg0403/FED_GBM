@@ -145,13 +145,16 @@ def preprocess_and_select_features(
     """
     protected_cols = ['Age', 'Gender', 'KPS', 'Resection_Status']
 
-    # 1. Fit Imputer STRICTLY on TCGA Training Data (N=77)
-    imputer = LeakageFreeImputer(categorical_cols=['Gender', 'Resection_Status'])
-    imputer.fit(X_tcga_tr)
-    X_tcga_tr_imp = imputer.transform(X_tcga_tr)
-    X_upenn_tr_imp = imputer.transform(X_upenn_tr)
-    X_tcga_te_imp = imputer.transform(X_tcga_te)
-    X_upenn_te_imp = imputer.transform(X_upenn_te)
+    # 1. Fit Site-Specific Imputers STRICTLY on Local Training Data
+    imputer_tcga = LeakageFreeImputer(categorical_cols=['Gender', 'Resection_Status'])
+    imputer_tcga.fit(X_tcga_tr)
+    X_tcga_tr_imp = imputer_tcga.transform(X_tcga_tr)
+    X_tcga_te_imp = imputer_tcga.transform(X_tcga_te)
+
+    imputer_upenn = LeakageFreeImputer(categorical_cols=['Gender', 'Resection_Status'])
+    imputer_upenn.fit(X_upenn_tr)
+    X_upenn_tr_imp = imputer_upenn.transform(X_upenn_tr)
+    X_upenn_te_imp = imputer_upenn.transform(X_upenn_te)
 
     # 2. Fit XGBoost Feature Selector STRICTLY on TCGA Training Data (N=77)
     selector = XGBoostFeatureSelector(n_features_to_select=target_p, protected_cols=protected_cols, random_state=seed)
@@ -371,7 +374,10 @@ def run_phase_7_4_master_experiment():
         # --- MODEL 4: Centralized MLP ---
         mlp_cent = SurvivalMLP(input_dim=input_dim)
         opt_cent = torch.optim.Adam(mlp_cent.parameters(), lr=0.01, weight_decay=1e-4)
-        crit_cent = nn.BCEWithLogitsLoss()
+        pos_c = float((y_dev_tr == 1).sum())
+        neg_c = float((y_dev_tr == 0).sum())
+        pos_wt = torch.tensor([neg_c / max(pos_c, 1.0)], dtype=torch.float32)
+        crit_cent = nn.BCEWithLogitsLoss(pos_weight=pos_wt)
 
         ds_cent = TensorDataset(torch.tensor(X_dev_tr_std.values, dtype=torch.float32), torch.tensor(y_dev_tr.values, dtype=torch.float32).unsqueeze(1))
         ld_cent = DataLoader(ds_cent, batch_size=16, shuffle=True)

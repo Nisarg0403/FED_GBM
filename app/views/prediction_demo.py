@@ -120,18 +120,21 @@ def render():
                     x=months, y=surv_curve,
                     mode="lines+markers",
                     name="Patient Survival Curve",
-                    line=dict(color="#2563eb", width=3),
-                    marker=dict(size=6, color="#1d4ed8")
+                    line=dict(color="#2563eb", width=3.5),
+                    marker=dict(size=7, color="#1d4ed8")
                 ))
-                fig_km.add_vline(x=12, line_dash="dash", line_color="#dc2626", annotation_text="12-Month Horizon")
+                fig_km.add_vline(x=12, line_dash="dash", line_color="#dc2626", annotation_text="12-Month Horizon", annotation_font=dict(size=13, color="#dc2626", family="Inter, sans-serif"))
                 fig_km.update_layout(
-                    title=dict(text="Personalized Monthly Survival Curve (0 to 24 Months)", font=dict(color="#0f172a", size=13)),
-                    xaxis=dict(title="Months Post-Diagnosis", gridcolor="#f1f5f9"),
-                    yaxis=dict(title="Probability of Survival", range=[0, 1.05], gridcolor="#e2e8f0"),
+                    font=dict(family="Inter, sans-serif", color="#0f172a", size=13),
+                    title=dict(text="<b>Parametric 12-Month Hazard Profile</b> (0–24 Month Risk Trajectory)", font=dict(color="#0f172a", size=15, family="Inter, sans-serif")),
+                    xaxis=dict(title=dict(text="<b>Months Post-Diagnosis</b>", font=dict(size=14, color="#0f172a")), tickfont=dict(size=13, color="#0f172a"), gridcolor="#f1f5f9"),
+                    yaxis=dict(title=dict(text="<b>Probability of Survival</b>", font=dict(size=14, color="#0f172a")), tickfont=dict(size=13, color="#0f172a"), range=[0, 1.05], gridcolor="#e2e8f0"),
+                    hoverlabel=dict(bgcolor="#0f172a", font_color="#ffffff", font_size=13, font_family="Inter, sans-serif"),
                     plot_bgcolor="#ffffff", paper_bgcolor="#ffffff",
-                    height=280, margin=dict(l=10, r=10, t=40, b=40)
+                    height=320, margin=dict(l=60, r=20, t=50, b=50)
                 )
                 st.plotly_chart(fig_km, use_container_width=True)
+                st.caption("ℹ️ *Note: The primary model target is binary 12-month survival ($S \\ge 365\\text{ days}$). The continuous trajectory above visualizes parametric risk decay derived from the predicted 12-month hazard rate.*")
 
             st.markdown("#### 🔍 Feature Contribution Breakdown for This Patient")
             feature_impacts = {
@@ -150,14 +153,18 @@ def render():
                 orientation="h",
                 marker_color=colors,
                 text=[f"{v:+.2f}" for v in imp_df["Impact"]],
-                textposition="outside"
+                textposition="outside",
+                textfont=dict(size=12, color="#0f172a", family="Inter, sans-serif"),
+                cliponaxis=False
             ))
             fig_imp.update_layout(
-                title=dict(text="Individual Feature Logit Contributions (Green = Improves Survival | Red = Reduces Survival)", font=dict(size=12, color="#0f172a")),
-                xaxis=dict(title="Impact on Log-Odds of Survival", gridcolor="#e2e8f0"),
-                yaxis=dict(gridcolor="#f1f5f9"),
+                font=dict(family="Inter, sans-serif", color="#0f172a", size=13),
+                title=dict(text="<b>Individual Feature Logit Contributions</b> (Green = Improves Survival | Red = Reduces Survival)", font=dict(size=15, color="#0f172a", family="Inter, sans-serif")),
+                xaxis=dict(title=dict(text="<b>Impact on Log-Odds of Survival</b>", font=dict(size=14, color="#0f172a")), tickfont=dict(size=13, color="#0f172a"), gridcolor="#e2e8f0"),
+                yaxis=dict(tickfont=dict(size=13, color="#0f172a"), gridcolor="#f1f5f9"),
+                hoverlabel=dict(bgcolor="#0f172a", font_color="#ffffff", font_size=13, font_family="Inter, sans-serif"),
                 plot_bgcolor="#ffffff", paper_bgcolor="#ffffff",
-                height=260, margin=dict(l=10, r=10, t=35, b=35)
+                height=300, margin=dict(l=150, r=45, t=50, b=50)
             )
             st.plotly_chart(fig_imp, use_container_width=True)
 
@@ -278,6 +285,7 @@ def render():
             if not NIBABEL_AVAILABLE:
                 st.warning("⚠️ `nibabel` library is required to render 3D NIfTI slice previews.")
             else:
+                tmp_path = None
                 try:
                     suffix = ".nii.gz" if uploaded_file.name.endswith(".nii.gz") else ".nii"
                     with tempfile.NamedTemporaryFile(suffix=suffix, delete=False) as tmp:
@@ -285,22 +293,37 @@ def render():
                         tmp_path = tmp.name
 
                     img = nib.load(tmp_path)
-                    data = img.get_fdata()
-                    if os.path.exists(tmp_path):
-                        os.unlink(tmp_path)
 
-                    st.success(f"✓ NIfTI scan loaded successfully! Shape: {data.shape}")
+                    if hasattr(img, "get_fdata"):
+                        data = img.get_fdata()
+                    elif hasattr(img, "dataobj"):
+                        data = np.asanyarray(img.dataobj)
+                    elif hasattr(img, "get_data"):
+                        data = img.get_data()
+                    else:
+                        raise ValueError(f"Uploaded file loaded as '{type(img).__name__}' which does not support volumetric array extraction.")
 
-                    z_slice = data.shape[2] // 2
-                    fig, ax = plt.subplots(figsize=(5, 5))
-                    fig.patch.set_facecolor("#ffffff")
-                    ax.set_facecolor("#000000")
-                    ax.imshow(data[:, :, z_slice], cmap="gray", origin="lower")
-                    ax.axis("off")
-                    ax.set_title(f"Axial Slice Z={z_slice}", color="#0f172a", fontsize=12)
-                    st.pyplot(fig)
+                    if not isinstance(data, np.ndarray) or data.ndim < 3:
+                        st.error(f"Expected 3D/4D volumetric scan data, but got shape {getattr(data, 'shape', type(data))}.")
+                    else:
+                        st.success(f"✓ NIfTI scan loaded successfully! Shape: {data.shape}")
+
+                        z_slice = data.shape[2] // 2
+                        fig, ax = plt.subplots(figsize=(5, 5))
+                        fig.patch.set_facecolor("#ffffff")
+                        ax.set_facecolor("#000000")
+                        ax.imshow(data[:, :, z_slice], cmap="gray", origin="lower")
+                        ax.axis("off")
+                        ax.set_title(f"Axial Slice Z={z_slice}", color="#0f172a", fontsize=12)
+                        st.pyplot(fig)
                 except Exception as e:
                     st.error(f"Error loading NIfTI file: {e}")
+                finally:
+                    if tmp_path and os.path.exists(tmp_path):
+                        try:
+                            os.unlink(tmp_path)
+                        except Exception:
+                            pass
 
     with tab_pipeline:
         st.markdown("### 3D Preprocessing & Radiomic Extraction Pipeline")

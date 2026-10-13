@@ -143,3 +143,52 @@ def load_improved_per_seed() -> Tuple[Optional[pd.DataFrame], str]:
     df = pd.read_csv(IMPROVED_PER_SEED_CSV)
     return df, ""
 
+
+@st.cache_data(ttl=3600)
+def load_deepsurv_benchmark() -> Tuple[Optional[pd.DataFrame], str]:
+    """
+    Loads DeepSurv benchmark results (Dirichlet Non-IID & DeepSurv Cox Partial Likelihood).
+    """
+    path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "results", "ieee_benchmark_results.csv"))
+    if not os.path.exists(path):
+        return None, "ieee_benchmark_results.csv not found."
+    df = pd.read_csv(path)
+    return df, ""
+
+
+@st.cache_data(ttl=3600)
+def load_v10_centralized() -> Tuple[Optional[pd.DataFrame], str]:
+    """Loads v10 Centralized DeepSurv baselines."""
+    path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "reports", "v10_centralized_baselines.csv"))
+    if not os.path.exists(path):
+        return None, "reports/v10_centralized_baselines.csv not found."
+    return pd.read_csv(path), ""
+
+
+@st.cache_data(ttl=3600)
+def load_v10_federated() -> Tuple[Optional[pd.DataFrame], str]:
+    """Loads v10 Multi-Seed Federated evaluation results."""
+    path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "reports", "v10_federated_results.csv"))
+    if not os.path.exists(path):
+        return None, "reports/v10_federated_results.csv not found."
+    return pd.read_csv(path), ""
+
+
+@st.cache_data(ttl=3600)
+def load_v10_significance() -> Tuple[Optional[pd.DataFrame], str]:
+    """Loads v10 10-Seed Statistical Significance test results."""
+    path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "reports", "v10_significance.csv"))
+    if not os.path.exists(path):
+        return None, "reports/v10_significance.csv not found."
+    return pd.read_csv(path), ""
+
+
+@st.cache_data(ttl=3600)
+def load_v10_ablations() -> Tuple[Optional[pd.DataFrame], str]:
+    """Loads v10 5-Dimension Ablation Matrix results."""
+    path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "reports", "v10_ablation_matrix.csv"))
+    if not os.path.exists(path):
+        return None, "reports/v10_ablation_matrix.csv not found."
+    return pd.read_csv(path), ""
+
+

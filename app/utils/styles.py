@@ -19,12 +19,9 @@ header[data-testid="stHeader"] {
 footer    { display: none !important; }
 
 /* ── Global Light Theme Background & Typography ───────────────────────── */
-html, body, [class*="css"] {
+html, body, .stApp {
     font-family: 'Inter', -apple-system, sans-serif !important;
-    color: #0f172a !important;
-}
-.stApp {
-    background: #f8fafc !important;
+    background-color: #f8fafc !important;
     color: #0f172a !important;
 }
 .block-container {
@@ -32,14 +29,30 @@ html, body, [class*="css"] {
     max-width: 1400px !important;
 }
 
+/* ── High Contrast Body & Text ────────────────────────────────────────── */
+p, label, span, li, div.stMarkdown, .stMarkdown p, .stMarkdown span {
+    color: #1e293b !important;
+}
+
 /* ── Sidebar ─────────────────────────────────────────────────────────────── */
 [data-testid="stSidebar"] {
-    background: #ffffff !important;
+    background-color: #ffffff !important;
     border-right: 1px solid #e2e8f0 !important;
 }
-[data-testid="stSidebar"] .stRadio > label,
+[data-testid="stSidebar"] [data-testid="stRadio"] label,
+[data-testid="stSidebar"] [data-testid="stRadio"] label p,
+[data-testid="stSidebar"] [data-testid="stRadio"] label span,
 [data-testid="stSidebar"] p,
-[data-testid="stSidebar"] span { color: #334155 !important; font-size: 13px !important; font-weight: 500 !important; }
+[data-testid="stSidebar"] span {
+    color: #334155 !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+}
+[data-testid="stSidebar"] [aria-checked="true"] + div p,
+[data-testid="stSidebar"] [aria-checked="true"] + div span {
+    color: #2563eb !important;
+    font-weight: 700 !important;
+}
 [data-testid="stSidebar"] h1,
 [data-testid="stSidebar"] h2,
 [data-testid="stSidebar"] h3 { color: #0f172a !important; }
@@ -48,64 +61,205 @@ html, body, [class*="css"] {
 /* ── Headings ─────────────────────────────────────────────────────────────── */
 h1 { color: #0f172a !important; font-size: 24px !important; font-weight: 700 !important; letter-spacing: -0.02em !important; margin-bottom: 6px !important; }
 h2 { color: #1e293b !important; font-size: 18px !important; font-weight: 600 !important; border-bottom: 1px solid #e2e8f0 !important; padding-bottom: 8px !important; margin-top: 24px !important; }
-h3 { color: #475569 !important; font-size: 14px !important; font-weight: 600 !important; text-transform: uppercase !important; letter-spacing: 0.04em !important; }
+h3 { color: #334155 !important; font-size: 14px !important; font-weight: 600 !important; text-transform: uppercase !important; letter-spacing: 0.04em !important; }
 
 /* ── Metric cards (st.metric) ───────────────────────────────────────────── */
 div[data-testid="stMetric"] {
-    background: #ffffff !important;
+    background-color: #ffffff !important;
     border: 1px solid #e2e8f0 !important;
     border-radius: 8px !important;
     padding: 16px 20px !important;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
 }
-div[data-testid="stMetricLabel"] { color: #64748b !important; font-size: 11px !important; font-family: 'JetBrains Mono', monospace !important; text-transform: uppercase !important; letter-spacing: 0.05em !important; font-weight: 600 !important; }
-div[data-testid="stMetricValue"] { color: #2563eb !important; font-size: 28px !important; font-weight: 700 !important; }
+div[data-testid="stMetricLabel"], div[data-testid="stMetricLabel"] * {
+    color: #64748b !important;
+    font-size: 11px !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    font-weight: 600 !important;
+}
+div[data-testid="stMetricValue"], div[data-testid="stMetricValue"] * {
+    color: #2563eb !important;
+    font-size: 28px !important;
+    font-weight: 700 !important;
+}
 div[data-testid="stMetricDelta"] { font-size: 11px !important; }
 
 /* ── DataFrames / Tables ────────────────────────────────────────────────── */
-div[data-testid="stDataFrame"] { border: 1px solid #e2e8f0 !important; border-radius: 8px !important; background: #ffffff !important; }
-.stDataFrame th { background: #f1f5f9 !important; color: #334155 !important; font-family: 'JetBrains Mono', monospace !important; font-size: 11px !important; text-transform: uppercase !important; letter-spacing: 0.03em !important; border-bottom: 1px solid #cbd5e1 !important; font-weight: 600 !important; }
-.stDataFrame td { background: #ffffff !important; color: #0f172a !important; font-family: 'JetBrains Mono', monospace !important; font-size: 12px !important; border-bottom: 1px solid #f1f5f9 !important; }
+div[data-testid="stDataFrame"] { border: 1px solid #e2e8f0 !important; border-radius: 8px !important; background-color: #ffffff !important; }
+.stDataFrame th { background-color: #f1f5f9 !important; color: #1e293b !important; font-family: 'JetBrains Mono', monospace !important; font-size: 11px !important; text-transform: uppercase !important; letter-spacing: 0.03em !important; border-bottom: 1px solid #cbd5e1 !important; font-weight: 700 !important; }
+.stDataFrame td { background-color: #ffffff !important; color: #0f172a !important; font-family: 'JetBrains Mono', monospace !important; font-size: 12px !important; border-bottom: 1px solid #f1f5f9 !important; }
 
 /* ── Tabs ────────────────────────────────────────────────────────────────── */
-[data-testid="stTabs"] [data-baseweb="tab-list"] { background: transparent !important; border-bottom: 2px solid #e2e8f0 !important; gap: 4px !important; }
-[data-testid="stTabs"] [data-baseweb="tab"] { background: transparent !important; color: #64748b !important; font-size: 14px !important; font-weight: 600 !important; border: none !important; border-bottom: 3px solid transparent !important; padding: 10px 20px !important; }
-[data-testid="stTabs"] [aria-selected="true"] { color: #2563eb !important; border-bottom: 3px solid #2563eb !important; background: transparent !important; }
+[data-testid="stTabs"] [data-baseweb="tab-list"] {
+    background-color: transparent !important;
+    border-bottom: 2px solid #e2e8f0 !important;
+    gap: 6px !important;
+}
+[data-testid="stTabs"] [data-baseweb="tab"] {
+    background-color: #ffffff !important;
+    color: #475569 !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    border: 1px solid #e2e8f0 !important;
+    border-bottom: none !important;
+    border-radius: 6px 6px 0 0 !important;
+    padding: 10px 20px !important;
+}
+[data-testid="stTabs"] [aria-selected="true"] {
+    color: #2563eb !important;
+    border-bottom: 3px solid #2563eb !important;
+    background-color: #eff6ff !important;
+    font-weight: 700 !important;
+}
 
-/* ── Buttons ─────────────────────────────────────────────────────────────── */
-.stButton > button {
-    background: #2563eb !important;
+/* ── Buttons (Explicit White Text) ────────────────────────────────────── */
+.stButton > button,
+.stButton > button p,
+.stButton > button span,
+.stDownloadButton > button,
+.stDownloadButton > button p,
+.stDownloadButton > button span {
     color: #ffffff !important;
+    font-weight: 600 !important;
+}
+.stButton > button, .stDownloadButton > button {
+    background-color: #2563eb !important;
     border: none !important;
     border-radius: 6px !important;
     padding: 10px 22px !important;
     font-size: 14px !important;
-    font-weight: 600 !important;
     font-family: 'Inter', sans-serif !important;
     box-shadow: 0 1px 2px rgba(0,0,0,0.08) !important;
 }
-.stButton > button:hover { background: #1d4ed8 !important; }
+.stButton > button:hover, .stDownloadButton > button:hover {
+    background-color: #1d4ed8 !important;
+    color: #ffffff !important;
+}
 
-/* ── Selectbox / Radio / Inputs ──────────────────────────────────────────── */
-div[data-testid="stSelectbox"] > div { background: #ffffff !important; border: 1px solid #cbd5e1 !important; border-radius: 6px !important; color: #0f172a !important; }
-div[data-testid="stRadio"] label { color: #0f172a !important; font-weight: 500 !important; }
+/* ── Selectbox / Dropdown Popovers / Multiselect ───────────────────────── */
+div[data-testid="stSelectbox"] > div,
+div[data-testid="stMultiSelect"] > div,
+div[data-baseweb="select"],
+div[data-baseweb="select"] > div {
+    background-color: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 6px !important;
+    color: #0f172a !important;
+}
+
+div[data-baseweb="select"] div,
+div[data-baseweb="select"] span,
+div[data-baseweb="select"] input,
+div[data-baseweb="select"] p,
+div[data-baseweb="select"] div[role="combobox"] {
+    background-color: transparent !important;
+    color: #0f172a !important;
+    font-weight: 500 !important;
+}
+
+div[data-baseweb="select"] svg {
+    fill: #475569 !important;
+    color: #475569 !important;
+}
+
+/* Multiselect Tags / Pills */
+span[data-baseweb="tag"],
+div[data-baseweb="tag"],
+[data-testid="stMultiSelect"] [data-baseweb="tag"] {
+    background-color: #eff6ff !important;
+    border: 1px solid #bfdbfe !important;
+    border-radius: 4px !important;
+    color: #1d4ed8 !important;
+    font-weight: 600 !important;
+}
+span[data-baseweb="tag"] span,
+div[data-baseweb="tag"] span,
+[data-testid="stMultiSelect"] [data-baseweb="tag"] * {
+    color: #1d4ed8 !important;
+}
+span[data-baseweb="tag"] svg,
+div[data-baseweb="tag"] svg {
+    fill: #1d4ed8 !important;
+}
+
+/* Popover & Dropdown Options Menu */
+div[data-baseweb="popover"],
+div[data-baseweb="menu"],
+ul[role="listbox"],
+ul[data-baseweb="menu"] {
+    background-color: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 6px !important;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05) !important;
+}
+
+li[role="option"],
+div[data-baseweb="menu"] li,
+div[data-baseweb="menu"] ul li {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    font-weight: 500 !important;
+}
+li[role="option"] *,
+div[data-baseweb="menu"] li * {
+    color: #0f172a !important;
+}
+
+li[role="option"]:hover,
+li[role="option"][aria-selected="true"],
+div[data-baseweb="menu"] li:hover {
+    background-color: #eff6ff !important;
+    color: #1d4ed8 !important;
+}
+li[role="option"]:hover *,
+li[role="option"][aria-selected="true"] * {
+    color: #1d4ed8 !important;
+    font-weight: 600 !important;
+}
+
+/* ── Inputs / Sliders / Radios ────────────────────────────────────────── */
+input[type="text"], input[type="number"] {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 6px !important;
+}
+[data-testid="stSlider"] label, [data-testid="stSlider"] label * {
+    color: #0f172a !important;
+    font-weight: 600 !important;
+}
+[data-testid="stSlider"] div[data-testid="stTickBarMin"],
+[data-testid="stSlider"] div[data-testid="stTickBarMax"] {
+    color: #475569 !important;
+    font-weight: 600 !important;
+}
+[data-testid="stRadio"] label, [data-testid="stRadio"] label p, [data-testid="stRadio"] label span {
+    color: #0f172a !important;
+    font-weight: 500 !important;
+}
 
 /* ── File uploader ───────────────────────────────────────────────────────── */
-[data-testid="stFileUploadDropzone"] { background: #ffffff !important; border: 2px dashed #cbd5e1 !important; border-radius: 8px !important; }
+[data-testid="stFileUploadDropzone"] { background-color: #ffffff !important; border: 2px dashed #cbd5e1 !important; border-radius: 8px !important; }
 
-/* ── Info / Success / Warning / Error boxes ─────────────────────────────── */
-[data-testid="stAlert"] { border-radius: 8px !important; border-left: 4px solid !important; color: #0f172a !important; }
-div[data-testid="stAlert"][data-type="info"]    { background: #eff6ff !important; border-left-color: #2563eb !important; color: #1e3a8a !important; }
-div[data-testid="stAlert"][data-type="success"] { background: #ecfdf5 !important; border-left-color: #059669 !important; color: #064e3b !important; }
-div[data-testid="stAlert"][data-type="warning"] { background: #fffbeb !important; border-left-color: #d97706 !important; color: #78350f !important; }
-div[data-testid="stAlert"][data-type="error"]   { background: #fef2f2 !important; border-left-color: #dc2626 !important; color: #7f1d1d !important; }
+/* ── Alert boxes ──────────────────────────────────────────────────────── */
+[data-testid="stAlert"] { border-radius: 8px !important; border-left: 4px solid !important; }
+div[data-testid="stAlert"][data-type="info"]    { background-color: #eff6ff !important; border-left-color: #2563eb !important; }
+div[data-testid="stAlert"][data-type="info"] *  { color: #1e3a8a !important; }
+div[data-testid="stAlert"][data-type="success"] { background-color: #ecfdf5 !important; border-left-color: #059669 !important; }
+div[data-testid="stAlert"][data-type="success"] * { color: #064e3b !important; }
+div[data-testid="stAlert"][data-type="warning"] { background-color: #fffbeb !important; border-left-color: #d97706 !important; }
+div[data-testid="stAlert"][data-type="warning"] * { color: #78350f !important; }
+div[data-testid="stAlert"][data-type="error"]   { background-color: #fef2f2 !important; border-left-color: #dc2626 !important; }
+div[data-testid="stAlert"][data-type="error"] * { color: #7f1d1d !important; }
 
 /* ── Expanders ───────────────────────────────────────────────────────────── */
-[data-testid="stExpander"] { background: #ffffff !important; border: 1px solid #e2e8f0 !important; border-radius: 8px !important; }
-[data-testid="stExpander"] summary { color: #0f172a !important; font-size: 14px !important; font-weight: 600 !important; }
+[data-testid="stExpander"] { background-color: #ffffff !important; border: 1px solid #e2e8f0 !important; border-radius: 8px !important; }
+[data-testid="stExpander"] summary, [data-testid="stExpander"] summary * { color: #0f172a !important; font-size: 14px !important; font-weight: 600 !important; }
 
 /* ── Code blocks ─────────────────────────────────────────────────────────── */
-code { background: #f1f5f9 !important; color: #0f172a !important; border: 1px solid #cbd5e1 !important; border-radius: 4px !important; font-family: 'JetBrains Mono', monospace !important; font-size: 12px !important; padding: 2px 6px !important; }
+code { background-color: #f1f5f9 !important; color: #0f172a !important; border: 1px solid #cbd5e1 !important; border-radius: 4px !important; font-family: 'JetBrains Mono', monospace !important; font-size: 12px !important; padding: 2px 6px !important; }
 
 /* ── Scrollbar ───────────────────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 8px; height: 8px; }
@@ -201,3 +355,53 @@ def disclaimer_banner(msg: str) -> str:
                 color:#92400e;font-family:'JetBrains Mono',monospace;font-weight:500;">
         ⚠️ {msg}
     </div>"""
+
+
+def apply_plotly_theme(fig, title: str = "", x_title: str = "", y_title: str = "", height: int = 400):
+    """
+    Applies high-contrast, professional Light Theme styling to any Plotly figure.
+    Ensures crisp dark text (#0f172a / #1e293b) for all titles, axis labels, tick labels, hoverlabels, and legends.
+    """
+    fig.update_layout(
+        title=dict(
+            text=f"<b>{title}</b>" if title else "",
+            font=dict(family="Inter, sans-serif", size=15, color="#0f172a"),
+            x=0.0,
+            xanchor="left",
+        ) if title else None,
+        paper_bgcolor="#ffffff",
+        plot_bgcolor="#ffffff",
+        height=height,
+        font=dict(family="Inter, sans-serif", size=12, color="#0f172a"),
+        margin=dict(l=50, r=30, t=50 if title else 30, b=110),
+        xaxis=dict(
+            title=dict(text=f"<b>{x_title}</b>" if x_title else "", font=dict(color="#0f172a", size=13)),
+            tickfont=dict(color="#0f172a", size=12, family="Inter, sans-serif"),
+            gridcolor="#e2e8f0",
+            zerolinecolor="#cbd5e1",
+            showline=True,
+            linecolor="#cbd5e1",
+        ),
+        yaxis=dict(
+            title=dict(text=f"<b>{y_title}</b>" if y_title else "", font=dict(color="#0f172a", size=13)),
+            tickfont=dict(color="#0f172a", size=12, family="Inter, sans-serif"),
+            gridcolor="#e2e8f0",
+            zerolinecolor="#cbd5e1",
+            showline=True,
+            linecolor="#cbd5e1",
+        ),
+        legend=dict(
+            font=dict(color="#0f172a", size=12, family="Inter, sans-serif"),
+            bgcolor="#ffffff",
+            bordercolor="#cbd5e1",
+            borderwidth=1,
+        ),
+        hoverlabel=dict(
+            bgcolor="#0f172a",
+            font_color="#ffffff",
+            font_size=13,
+            font_family="Inter, sans-serif"
+        )
+    )
+    return fig
+

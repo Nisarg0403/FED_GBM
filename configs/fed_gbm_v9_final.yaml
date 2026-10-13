@@ -1,0 +1,51 @@
+# FED-GBM v9 Final Experiment Configuration
+
+experiment_name: "FED-GBM-v9-MultiModal"
+version: "9.0.0"
+
+data:
+  cohorts:
+    - TCGA
+    - CGGA_Combined
+    - UPenn-GBM
+
+  shared_backbone_features:
+    - Age
+    - Gender
+    - IDH1_mutation
+
+  site_features:
+    TCGA:
+      shared_clinical: [Age, Gender, IDH1_mutation, MGMT_methylation]
+      cohort_clinical: [karnofsky_score]
+      n_gene_expression: 200
+    CGGA_Combined:
+      shared_clinical: [Age, Gender, IDH1_mutation, MGMT_methylation]
+      cohort_clinical: [Radio_status, Chemo_status]
+      n_gene_expression: 200
+    UPenn-GBM:
+      shared_clinical: [Age, Gender, IDH1_mutation]
+      cohort_clinical: []
+      n_gene_expression: 0
+
+federated:
+  architecture: "FedPer"
+  methods:
+    - FedAvg
+    - FedProx
+    - CA-FedAvg
+    - HAPA
+  hyperparameters:
+    rounds: 20
+    epochs: 3
+    batch_size: 32
+    learning_rate: 0.01
+    fedprox_mu: 0.0001
+    ca_fedavg_lambda: 1.0
+    hapa_mu_base: 0.01
+
+evaluation:
+  n_seeds: 10
+  seeds: [42, 101, 2024, 777, 999, 123, 456, 789, 9999, 8888]
+  loso: true
+  bootstrap_resamples: 1000

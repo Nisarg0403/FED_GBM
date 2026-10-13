@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use FED-GBM in your research, please cite it as below."
+authors:
+  - family-names: "Vakharia"
+    given-names: "Nisarg"
+title: "FED-GBM: Privacy-Preserving Federated Learning for Glioblastoma Multiforme Prognosis Across Multi-Institutional Cohorts"
+version: 3.0.0
+date-released: 2026-10-13
+url: "https://github.com/Nisarg0403/FED_GBM"
+keywords:
+  - federated learning
+  - differential privacy
+  - glioblastoma multiforme
+  - survival prognosis
+  - multimodal deep learning
+  - multi-cohort validation

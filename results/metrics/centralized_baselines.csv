@@ -1,0 +1,7 @@
+dataset,model,cv_auc_mean,cv_auc_std
+TCGA,XGBoost,1.0,0.0
+TCGA,LogisticRegression,1.0,0.0
+TCGA,CentralizedMLP,1.0,0.0
+UPenn,XGBoost,0.5516971182412359,0.07800966228984724
+UPenn,LogisticRegression,0.43890139389088967,0.07942220253395108
+UPenn,CentralizedMLP,0.5049431893969708,0.05846386416280958

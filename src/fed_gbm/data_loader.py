@@ -85,7 +85,6 @@ def load_tcga_clinical(clinical_path: str = CLINICAL_PATH) -> pd.DataFrame:
     df = df[df["demographic.vital_status"].isin(valid_status)].copy()
 
     engineered = []
-    np.random.seed(42)
     for _, row in df.iterrows():
         pid = str(row["cases.submitter_id"]).strip()
         age = _safe_float(row["demographic.age_at_index"])
@@ -93,18 +92,19 @@ def load_tcga_clinical(clinical_path: str = CLINICAL_PATH) -> pd.DataFrame:
         rad, chemo = _encode_treatment(row["treatments.treatment_type"])
         label = int(row["survival_long"])
 
-        # Realistic KPS Score synthesis (calibrated variance delta=6.0, overlap realistic)
-        base_kps = 78.0 if label == 1 else 72.0
-        kps = np.clip(np.random.normal(base_kps, 12.0), 40.0, 100.0)
+        # Deterministic per-patient RNG based on patient_id hash to ensure environment independence
+        rng_seed = int(hashlib.sha256(pid.encode()).hexdigest(), 16) % (2**32)
+        rng = np.random.default_rng(rng_seed)
 
-        # Essential Molecular Panel Synthesis (matched to TCGA-GBM published literature rates)
-        # IDH1 mutant: ~12% overall, higher in long-term 12m survivors (22% vs 4%)
-        p_idh = 0.22 if label == 1 else 0.04
-        idh1_mut = np.random.choice([1.0, 0.0], p=[p_idh, 1.0 - p_idh])
+        # Realistic KPS Score synthesis (unconditional TCGA-GBM population parameters)
+        kps = np.clip(rng.normal(75.0, 12.0), 40.0, 100.0)
 
-        # MGMT methylated: ~45% overall, higher in 12m survivors (62% vs 32%)
-        p_mgmt = 0.62 if label == 1 else 0.32
-        mgmt_meth = np.random.choice([1.0, 0.0], p=[p_mgmt, 1.0 - p_mgmt])
+        # Essential Molecular Panel Synthesis (unconditional published TCGA-GBM population rates)
+        # IDH1 mutant: ~12% overall population rate
+        idh1_mut = rng.choice([1.0, 0.0], p=[0.12, 0.88])
+
+        # MGMT methylated: ~45% overall population rate
+        mgmt_meth = rng.choice([1.0, 0.0], p=[0.45, 0.55])
 
         engineered.append({
             "patient_id": pid,
@@ -119,8 +119,8 @@ def load_tcga_clinical(clinical_path: str = CLINICAL_PATH) -> pd.DataFrame:
         })
 
     result = pd.DataFrame(engineered)
-    result["Age"] = result["Age"].fillna(result["Age"].median())
-    result["Gender"] = result["Gender"].fillna(result["Gender"].median())
+    result["Age"] = result["Age"].fillna(60.0)
+    result["Gender"] = result["Gender"].fillna(0.0)
 
     return result.reset_index(drop=True)
 
@@ -182,21 +182,20 @@ def simulate_hospital_cohort(
     labels = manifest["label_12m"].values
 
     ages, genders, rads, chemos, kps_scores, idh_muts, mgmt_meths = [], [], [], [], [], [], []
-    for lbl in labels:
-        age_adj = -3.0 if lbl == 1 else 3.0
-        kps_adj = 5.0 if lbl == 1 else -5.0
+    for i, pid in enumerate(manifest["patient_id"].values):
+        # Per-patient deterministic RNG based on patient ID and seed
+        rng_seed = (seed + int(hashlib.sha256(str(pid).encode()).hexdigest(), 16)) % (2**32)
+        rng = np.random.default_rng(rng_seed)
 
-        age = np.clip(np.random.normal(age_mean + age_adj, age_std), 18.0, 85.0)
-        gender = np.random.choice([0.0, 1.0], p=[0.40, 0.60])
-        rad = np.random.choice([0, 1], p=[0.25, 0.75] if lbl == 1 else [0.55, 0.45])
-        chemo = np.random.choice([0, 1], p=[0.25, 0.75] if lbl == 1 else [0.60, 0.40])
-        kps = np.clip(np.random.normal(kps_mean + kps_adj, 11.0), 40.0, 100.0)
+        age = np.clip(rng.normal(age_mean, age_std), 18.0, 85.0)
+        gender = rng.choice([0.0, 1.0], p=[0.40, 0.60])
+        rad = rng.choice([0, 1], p=[0.30, 0.70])
+        chemo = rng.choice([0, 1], p=[0.35, 0.65])
+        kps = np.clip(rng.normal(kps_mean, 11.0), 40.0, 100.0)
 
-        # Molecular features matching literature
-        p_idh = 0.20 if lbl == 1 else 0.05
-        p_mgmt = 0.60 if lbl == 1 else 0.35
-        idh_mut = np.random.choice([1.0, 0.0], p=[p_idh, 1.0 - p_idh])
-        mgmt_meth = np.random.choice([1.0, 0.0], p=[p_mgmt, 1.0 - p_mgmt])
+        # Molecular features sampled unconditionally matching cohort population literature rates
+        idh_mut = rng.choice([1.0, 0.0], p=[0.12, 0.88])
+        mgmt_meth = rng.choice([1.0, 0.0], p=[0.45, 0.55])
 
         ages.append(age)
         genders.append(gender)
@@ -271,3 +270,37 @@ def compute_data_hash(df: pd.DataFrame) -> str:
     """Returns SHA256 of patient IDs for split verification."""
     ids = sorted(df["patient_id"].tolist())
     return hashlib.sha256(",".join(ids).encode()).hexdigest()
+
+
+def partition_data_dirichlet(
+    df: pd.DataFrame,
+    n_clients: int = 3,
+    alpha: float = 0.5,
+    label_col: str = "label_12m",
+    seed: int = 42
+) -> List[pd.DataFrame]:
+    """
+    Partitions a DataFrame non-IID across K federated clients using a Dirichlet distribution Dir(alpha).
+    Smaller alpha values (e.g. alpha=0.1) yield extreme non-IID label heterogeneity.
+    Larger alpha values (e.g. alpha=10.0) yield uniform IID splits.
+    """
+    rng = np.random.default_rng(seed)
+    labels = df[label_col].values
+    unique_labels = np.unique(labels)
+
+    client_indices: List[List[int]] = [[] for _ in range(n_clients)]
+
+    for k in unique_labels:
+        idx_k = np.where(labels == k)[0]
+        rng.shuffle(idx_k)
+
+        # Sample proportions from Dirichlet(alpha)
+        proportions = rng.dirichlet(np.repeat(alpha, n_clients))
+        split_counts = (np.cumsum(proportions) * len(idx_k)).astype(int)[:-1]
+        splits = np.split(idx_k, split_counts)
+
+        for client_idx, split in enumerate(splits):
+            client_indices[client_idx].extend(split.tolist())
+
+    return [df.iloc[idx].reset_index(drop=True) for idx in client_indices]
+

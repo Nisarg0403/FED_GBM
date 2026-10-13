@@ -1,0 +1,8 @@
+metric_category,metric_name,value
+Improvement vs FedAvg,Net Reclassification Index (NRI),0.009803921568627444
+Improvement vs FedAvg,Integrated Discrimination Improvement (IDI),-0.003750785126113418
+Brier Decomposition,Total Brier Score,0.4710720814509167
+Brier Decomposition,Reliability (Calibration Error),0.37735107441014926
+Brier Decomposition,Resolution (Discriminative Power),0.0029786855526666074
+Brier Decomposition,Uncertainty (Baseline Variance),0.09418282548476453
+Prognostic Metric,Time-Dependent ROC-AUC,0.5473856209150327

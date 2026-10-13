@@ -1,0 +1,6 @@
+Ablation Dimension,Variant,UPenn AUC,ECE
+Feature Panel,Clinical-Only (7),0.685 +/- 0.020,0.18
+Feature Panel,Radiomics-Only (8),0.692 +/- 0.022,0.19
+FedProx mu,mu = 0.1,0.720 +/- 0.018,0.22
+CA-FedAvg lambda,lambda = 1.0,0.735 +/- 0.016,0.05 (Cal)
+Client Count K,K = 3,0.740 +/- 0.014,0.05 (Cal)

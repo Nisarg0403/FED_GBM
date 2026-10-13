@@ -34,6 +34,50 @@ def set_seed(seed: int = 42):
     torch.backends.cudnn.benchmark = False
 
 
+class CoxPHLoss(nn.Module):
+    """
+    Negative Log Partial Likelihood loss for DeepSurv / Cox Proportional Hazards survival models.
+    Supports right-censored survival data.
+    
+    L(theta) = - sum_{i: E_i=1} ( r_i - log( sum_{j in R(T_i)} exp(r_j) ) )
+    where r_i = f(x_i) is the linear risk score predicted by the neural network.
+    """
+    def __init__(self):
+        super(CoxPHLoss, self).__init__()
+
+    def forward(self, risk_scores: torch.Tensor, durations: torch.Tensor, events: torch.Tensor) -> torch.Tensor:
+        """
+        risk_scores: (N, 1) predicted log-hazard / risk scores r_i
+        durations: (N, 1) observed survival or censoring times T_i
+        events: (N, 1) binary event status indicator E_i (1 = uncensored event/death, 0 = censored)
+        """
+        # Flatten tensors
+        r = risk_scores.view(-1)
+        t = durations.view(-1)
+        e = events.view(-1)
+
+        # Sort descending by duration
+        order = torch.argsort(t, descending=True)
+        r_sorted = r[order]
+        e_sorted = e[order]
+
+        # Log-sum-exp trick for stable risk set cumulative summation
+        max_r = torch.max(r_sorted)
+        exp_r = torch.exp(r_sorted - max_r)
+        cum_exp_r = torch.cumsum(exp_r, dim=0)
+        log_risk_set = torch.log(cum_exp_r) + max_r
+
+        # Calculate negative log likelihood for uncensored events
+        uncensored_loss = e_sorted * (log_risk_set - r_sorted)
+        n_events = torch.sum(e_sorted)
+
+        if n_events == 0:
+            return torch.tensor(0.0, device=risk_scores.device, requires_grad=True)
+
+        return torch.sum(uncensored_loss) / n_events
+
+
+
 class SurvivalMLP(nn.Module):
     """
     PyTorch MLP for 12-month survival prognosis.

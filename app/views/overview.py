@@ -121,32 +121,32 @@ def render():
 
     # ── Realistic Multi-Center Performance Highlights ───────────────────────
     st.markdown("---")
-    st.markdown("### 🏆 Real Patient Cohort Highlights (Realistic Literature Targets)")
+    st.markdown("### 🏆 Multi-Center Clinical Survival Highlights (v10 DeepSurv)")
     c1, c2, c3 = st.columns(3)
     with c1:
         st.markdown("""
         <div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:8px;padding:18px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
-            <div style="font-size:12px;color:#64748b;font-weight:600;font-family:'JetBrains Mono',monospace;">TCGA CENTRALIZED RF</div>
-            <div style="font-size:26px;font-weight:700;color:#059669;margin:6px 0;">0.8431 ROC-AUC</div>
-            <div style="font-size:13px;color:#334155;">TCGA Real Patient Cohort (N=115)</div>
-            <div style="font-size:11px;color:#2563eb;margin-top:4px;font-weight:600;">✅ Clinically Realistic Baseline</div>
+            <div style="font-size:12px;color:#64748b;font-weight:600;font-family:'JetBrains Mono',monospace;">TCGA DEEPSURV (COXPH)</div>
+            <div style="font-size:26px;font-weight:700;color:#059669;margin:6px 0;">0.8253 C-Index</div>
+            <div style="font-size:13px;color:#334155;">TCGA Real Patient Cohort (N=136)</div>
+            <div style="font-size:11px;color:#2563eb;margin-top:4px;font-weight:600;">✅ High Prognostic Discrimination</div>
         </div>
         """, unsafe_allow_html=True)
     with c2:
         st.markdown("""
         <div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:8px;padding:18px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
-            <div style="font-size:12px;color:#64748b;font-weight:600;font-family:'JetBrains Mono',monospace;">FEDPROX FEDERATED AI</div>
-            <div style="font-size:26px;font-weight:700;color:#059669;margin:6px 0;">0.8183 ROC-AUC</div>
-            <div style="font-size:13px;color:#334155;">Multi-Hospital Co-Training (TCGA)</div>
-            <div style="font-size:11px;color:#059669;margin-top:4px;font-weight:600;">🔒 Privacy-Preserving FL</div>
+            <div style="font-size:12px;color:#64748b;font-weight:600;font-family:'JetBrains Mono',monospace;">MULTI-SEED FEDERATED AI</div>
+            <div style="font-size:26px;font-weight:700;color:#059669;margin:6px 0;">0.7746 C-Index</div>
+            <div style="font-size:13px;color:#334155;">10-Seed Mean across TCGA+CGGA+UPenn</div>
+            <div style="font-size:11px;color:#059669;margin-top:4px;font-weight:600;">🔒 Privacy-Preserving FL (CA-FedAvg)</div>
         </div>
         """, unsafe_allow_html=True)
     with c3:
         st.markdown("""
         <div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:8px;padding:18px;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
-            <div style="font-size:12px;color:#64748b;font-weight:600;font-family:'JetBrains Mono',monospace;">CGGA FEDPROX ZERO-SHOT</div>
-            <div style="font-size:26px;font-weight:700;color:#2563eb;margin:6px 0;">0.8480 ROC-AUC</div>
-            <div style="font-size:13px;color:#334155;">Asian Patient Cohort (CGGA)</div>
+            <div style="font-size:12px;color:#64748b;font-weight:600;font-family:'JetBrains Mono',monospace;">CGGA DEEPSURV (COXPH)</div>
+            <div style="font-size:26px;font-weight:700;color:#2563eb;margin:6px 0;">0.7159 C-Index</div>
+            <div style="font-size:13px;color:#334155;">Asian Patient Cohort (CGGA N=300)</div>
             <div style="font-size:11px;color:#059669;margin-top:4px;font-weight:600;">🌐 Strong Cross-Border Generalization</div>
         </div>
         """, unsafe_allow_html=True)

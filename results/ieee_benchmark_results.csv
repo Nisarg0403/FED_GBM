@@ -1,0 +1,19 @@
+seed,benchmark,model,eval_set,roc_auc,pr_auc,accuracy,f1
+42,Dirichlet Non-IID (alpha=0.5),FedProx SurvivalMLP,TCGA_Test (N=20),1.0,1.0,1.0,1.0
+42,Dirichlet Non-IID (alpha=0.5),FedProx SurvivalMLP,UPenn_External (N=114),0.5649509803921569,0.9215937272159505,0.6666666666666666,0.7888888888888889
+42,Dirichlet Non-IID (alpha=0.1),FedProx SurvivalMLP,TCGA_Test (N=20),1.0,1.0,1.0,1.0
+42,Dirichlet Non-IID (alpha=0.1),FedProx SurvivalMLP,UPenn_External (N=114),0.5416666666666667,0.9146229016892011,0.45614035087719296,0.5921052631578947
+42,DeepSurv Cox Partial Likelihood,Cox-SurvivalMLP,TCGA_Test (N=20),1.0,1.0,1.0,1.0
+42,DeepSurv Cox Partial Likelihood,Cox-SurvivalMLP,UPenn_External (N=114),0.559640522875817,0.90958589470855,0.45614035087719296,0.5866666666666667
+101,Dirichlet Non-IID (alpha=0.5),FedProx SurvivalMLP,TCGA_Test (N=20),1.0,1.0,1.0,1.0
+101,Dirichlet Non-IID (alpha=0.5),FedProx SurvivalMLP,UPenn_External (N=114),0.49468954248366004,0.8955881265145037,0.47368421052631576,0.6103896103896104
+101,Dirichlet Non-IID (alpha=0.1),FedProx SurvivalMLP,TCGA_Test (N=20),1.0,1.0000000000000002,1.0,1.0
+101,Dirichlet Non-IID (alpha=0.1),FedProx SurvivalMLP,UPenn_External (N=114),0.5134803921568628,0.904649797658759,0.5263157894736842,0.6625
+101,DeepSurv Cox Partial Likelihood,Cox-SurvivalMLP,TCGA_Test (N=20),1.0,1.0,0.9826086956521739,0.989010989010989
+101,DeepSurv Cox Partial Likelihood,Cox-SurvivalMLP,UPenn_External (N=114),0.5661764705882353,0.9192543598200247,0.4473684210526316,0.5771812080536913
+2024,Dirichlet Non-IID (alpha=0.5),FedProx SurvivalMLP,TCGA_Test (N=20),1.0,1.0,1.0,1.0
+2024,Dirichlet Non-IID (alpha=0.5),FedProx SurvivalMLP,UPenn_External (N=114),0.508578431372549,0.9031954375907043,0.4824561403508772,0.6143790849673203
+2024,Dirichlet Non-IID (alpha=0.1),FedProx SurvivalMLP,TCGA_Test (N=20),1.0,1.0000000000000002,1.0,1.0
+2024,Dirichlet Non-IID (alpha=0.1),FedProx SurvivalMLP,UPenn_External (N=114),0.5420751633986928,0.9042222771006503,0.45614035087719296,0.5866666666666667
+2024,DeepSurv Cox Partial Likelihood,Cox-SurvivalMLP,TCGA_Test (N=20),1.0,1.0,1.0,1.0
+2024,DeepSurv Cox Partial Likelihood,Cox-SurvivalMLP,UPenn_External (N=114),0.5661764705882353,0.9198859233635983,0.4473684210526316,0.5771812080536913

@@ -83,7 +83,27 @@ def render():
         with col1:
             st.dataframe(df_imp[["Rank", "Feature", "Mean |SHAP| Impact"]].round(4), hide_index=True, use_container_width=True)
         with col2:
-            st.bar_chart(df_imp.set_index("Feature")["Mean |SHAP| Impact"])
+            import plotly.graph_objects as go
+            fig_shap = go.Figure(go.Bar(
+                x=df_imp["Mean |SHAP| Impact"],
+                y=df_imp["Feature"],
+                orientation="h",
+                marker_color="#2563eb",
+                text=[f"{v:.4f}" for v in df_imp["Mean |SHAP| Impact"]],
+                textposition="outside",
+                textfont=dict(size=12, color="#0f172a", family="Inter, sans-serif"),
+                cliponaxis=False
+            ))
+            fig_shap.update_layout(
+                font=dict(family="Inter, sans-serif", color="#0f172a", size=13),
+                title=dict(text="<b>Mean Absolute SHAP Impact Ranking</b>", font=dict(color="#0f172a", size=15, family="Inter, sans-serif")),
+                xaxis=dict(title=dict(text="<b>Mean |SHAP| Impact Value</b>", font=dict(color="#0f172a", size=13)), tickfont=dict(color="#0f172a", size=12), gridcolor="#e2e8f0"),
+                yaxis=dict(autorange="reversed", tickfont=dict(color="#0f172a", size=13, family="Inter, sans-serif")),
+                plot_bgcolor="#ffffff", paper_bgcolor="#ffffff",
+                height=300, margin=dict(l=140, r=40, t=50, b=40),
+                hoverlabel=dict(bgcolor="#0f172a", font_color="#ffffff", font_size=13)
+            )
+            st.plotly_chart(fig_shap, use_container_width=True)
 
         st.markdown(
             """

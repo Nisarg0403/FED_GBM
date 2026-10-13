@@ -1,0 +1,52 @@
+{
+  "tcga_clinical": {
+    "source": "NCI Genomic Data Commons (GDC) REST API",
+    "url": "https://portal.gdc.cancer.gov/projects/TCGA-GBM",
+    "api_endpoint": "https://api.gdc.cancer.gov/cases",
+    "downloaded_by": "antigravity_mcp",
+    "download_date": "2026-10-06",
+    "sha256": "1268759e8fb39f6ff2e08795d8e4c51ee8140a47f32f4433bbc41b35f5f544f0",
+    "n_patients": 617,
+    "verified_real": true
+  },
+  "tcga_molecular": {
+    "source": "cBioPortal REST API (lgggbm_tcga_pub)",
+    "url": "https://www.cbioportal.org/study/summary?id=lgggbm_tcga_pub",
+    "api_endpoint": "https://www.cbioportal.org/api/studies/lgggbm_tcga_pub/clinical-data",
+    "downloaded_by": "antigravity_mcp",
+    "download_date": "2026-10-06",
+    "sha256": "39d72d991dbf6edbca7f06099d6200891e4e4ecc3d1c2930a5cb34bd049a6c3e",
+    "n_patients": 617,
+    "verified_real": true
+  },
+  "tcga_merged": {
+    "source": "Merged GDC Clinical + cBioPortal Molecular",
+    "downloaded_by": "antigravity_mcp",
+    "download_date": "2026-10-06",
+    "sha256": "2acd359890e70e968fb5e2f3b186936d585828d92c12cc8e6c86b5fc5235940b",
+    "n_patients": 617,
+    "verified_real": true
+  },
+  "cgga_325": {
+    "source": "Chinese Glioma Genome Atlas (CGGA) Portal",
+    "url": "http://www.cgga.org.cn/",
+    "filename": "CGGA.mRNAseq_325_clinical.20200506.txt",
+    "downloaded_by": "human_user",
+    "download_date": "2026-10-06",
+    "sha256": "17743b5816b29f60ea9618300ffc8a42d9ae03e1647c8bc3f4a0a019b4b15ce3",
+    "n_patients_total": 325,
+    "n_grade_iv_patients": 139,
+    "verified_real": true
+  },
+  "cgga_693": {
+    "source": "Chinese Glioma Genome Atlas (CGGA) Portal",
+    "url": "http://www.cgga.org.cn/",
+    "filename": "CGGA.mRNAseq_693_clinical.20200506.txt",
+    "downloaded_by": "human_user",
+    "download_date": "2026-10-06",
+    "sha256": "deca8eb6529903ac314640714dcda9b3ca459507cb9737d5e7da97053ce55bd0",
+    "n_patients_total": 693,
+    "n_grade_iv_patients": 249,
+    "verified_real": true
+  }
+}

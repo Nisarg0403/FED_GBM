@@ -63,14 +63,22 @@ def render():
         "Performance evaluation across 3 real clinical patient cohorts (TCGA, UPenn, CGGA) & 6 AI models."
     ), unsafe_allow_html=True)
 
-    # Option to toggle between Real Clinical Data & Phase 7.4 Protocol Verification Data
+    # Option to toggle between Real Clinical Data, Continuous DeepSurv Survival Benchmarks, & Phase 7.4 Protocol Benchmark
     data_source = st.radio(
         "Data Mode",
-        ["Real Patient Datasets (TCGA, UPenn, CGGA)", "Phase 7.4 Protocol Benchmark"],
+        ["Real Patient Datasets (TCGA, UPenn, CGGA)", "DeepSurv Survival Benchmarks (Dirichlet Non-IID)", "Phase 7.4 Protocol Benchmark"],
         horizontal=True
     )
 
-    if "Real Patient" in data_source:
+    if "DeepSurv" in data_source:
+        load_ds = getattr(dl_mod, "load_deepsurv_benchmark", None)
+        agg, err = load_ds() if load_ds else (None, "Loader not defined")
+        if agg is None:
+            st.error(f"⛔ Cannot load DeepSurv Benchmark results — {err}")
+            return
+        cohort_col = "eval_set"
+        available_cohorts = list(agg["eval_set"].unique())
+    elif "Real Patient" in data_source:
         agg, err = load_improved_aggregate()
         if agg is None:
             st.error(f"⛔ Cannot load real clinical dataset results — {err}")
@@ -122,33 +130,34 @@ def render():
 
     with tab_chart:
         colors = [GROUP_COLORS.get(g, "#64748b") for g in df_sorted["group"]]
-        text_vals = [f"{v:.4f}" for v in df_sorted[mean_col]]
+        text_vals = [f"<b>{v:.4f}</b>" for v in df_sorted[mean_col]]
         fig = go.Figure()
         fig.add_trace(go.Bar(
             x=df_sorted["model"],
             y=df_sorted[mean_col],
             text=text_vals,
             textposition="outside",
-            textfont=dict(size=11, color="#0f172a", family="Inter"),
+            textfont=dict(size=13, color="#0f172a", family="Inter, sans-serif"),
             cliponaxis=False,
             error_y=dict(type="data", array=df_sorted[std_col].fillna(0).tolist() if std_col in df_sorted.columns else None, visible=True,
-                         color="#64748b", thickness=1.5, width=4),
+                         color="#475569", thickness=2.0, width=6),
             marker_color=colors,
             hovertemplate="<b>%{x}</b><br>" + f"{sel_metric}: %{{y:.4f}}<extra></extra>",
         ))
         arrow = "↓ lower is better" if lower_better else "↑ higher is better"
         y_max = float(df_sorted[mean_col].max())
-        y_padding = y_max * 0.15 if y_max > 0 else 0.1
+        y_padding = y_max * 0.18 if y_max > 0 else 0.1
         fig.update_layout(
-            title=dict(text=f"{sel_metric} — {selected_cohort} ({arrow})", font=dict(color="#0f172a", size=14, family="Inter")),
+            title=dict(text=f"<b>{sel_metric} — {selected_cohort} ({arrow})</b>", font=dict(color="#0f172a", size=17, family="Inter, sans-serif")),
             plot_bgcolor="#ffffff", paper_bgcolor="#ffffff",
-            font=dict(color="#334155", family="Inter"),
-            xaxis=dict(tickangle=-35, gridcolor="#f1f5f9", title=""),
-            yaxis=dict(gridcolor="#e2e8f0", title=sel_metric,
+            font=dict(color="#0f172a", size=13, family="Inter, sans-serif"),
+            xaxis=dict(tickangle=-25, gridcolor="#f1f5f9", title="", tickfont=dict(color="#0f172a", size=13, family="Inter, sans-serif")),
+            yaxis=dict(gridcolor="#e2e8f0", title=dict(text=f"<b>{sel_metric}</b>", font=dict(color="#0f172a", size=14, family="Inter, sans-serif")), tickfont=dict(color="#0f172a", size=13, family="Inter, sans-serif"),
                        range=[0, y_max + y_padding]),
-            margin=dict(l=10, r=10, t=50, b=120),
-            height=460,
+            margin=dict(l=20, r=20, t=60, b=130),
+            height=500,
             showlegend=False,
+            hoverlabel=dict(bgcolor="#0f172a", font_color="#ffffff", font_size=14)
         )
         st.plotly_chart(fig, use_container_width=True)
         _group_legend()
@@ -227,16 +236,17 @@ def _centralized_vs_federated(agg: pd.DataFrame, metric_cfg: tuple, selected_coh
 
     arrow = "↓ lower is better" if lower_better else "↑ higher is better"
     fig.update_layout(
-        title=dict(text=f"{metric_lbl} — Group Comparison ({arrow})",
-                   font=dict(color="#0f172a", size=14, family="Inter")),
+        title=dict(text=f"<b>{metric_lbl} — Group Comparison ({arrow})</b>",
+                   font=dict(color="#0f172a", size=17, family="Inter, sans-serif")),
         plot_bgcolor="#ffffff", paper_bgcolor="#ffffff",
-        font=dict(color="#334155", family="Inter"),
-        xaxis=dict(tickangle=-35, gridcolor="#f1f5f9", title=""),
-        yaxis=dict(gridcolor="#e2e8f0", title=metric_lbl),
+        font=dict(color="#0f172a", size=13, family="Inter, sans-serif"),
+        xaxis=dict(tickangle=-25, gridcolor="#f1f5f9", title="", tickfont=dict(color="#0f172a", size=13, family="Inter, sans-serif")),
+        yaxis=dict(gridcolor="#e2e8f0", title=dict(text=f"<b>{metric_lbl}</b>", font=dict(color="#0f172a", size=14, family="Inter, sans-serif")), tickfont=dict(color="#0f172a", size=13, family="Inter, sans-serif")),
         legend=dict(bgcolor="#ffffff", bordercolor="#cbd5e1", borderwidth=1,
-                    font=dict(color="#0f172a", size=12)),
-        margin=dict(l=10, r=10, t=50, b=120),
-        height=430,
+                    font=dict(color="#0f172a", size=13, family="Inter, sans-serif")),
+        margin=dict(l=20, r=20, t=60, b=130),
+        height=480,
+        hoverlabel=dict(bgcolor="#0f172a", font_color="#ffffff", font_size=14)
     )
     st.plotly_chart(fig, use_container_width=True)
 

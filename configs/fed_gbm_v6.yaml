@@ -1,0 +1,35 @@
+# FED-GBM v6 Configuration File (Real Data Edition)
+
+data:
+  tcga_real_path: "data/real/tcga/raw/tcga_real_merged.csv"
+  cgga_325_path: "data/real/cgga/raw/CGGA.mRNAseq_325_clinical.20200506.txt"
+  cgga_693_path: "data/real/cgga/raw/CGGA.mRNAseq_693_clinical.20200506.txt"
+  provenance_path: "data/provenance.json"
+
+features:
+  panel:
+    - "Age"
+    - "Gender"
+    - "KPS_Score"
+    - "IDH1_mutation"
+    - "MGMT_methylation"
+
+federated:
+  clients:
+    - "TCGA_Real"
+    - "CGGA_325_Real"
+    - "CGGA_693_Real"
+  rounds: 20
+  local_epochs: 5
+  batch_size: 16
+  learning_rate: 0.01
+
+privacy:
+  dp_enabled: true
+  sigma: 0.10
+  clipping_norm: 1.0
+  delta: 1e-5
+
+guards:
+  max_mutual_information: 0.50
+  max_correlation: 0.90

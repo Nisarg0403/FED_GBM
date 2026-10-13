@@ -99,7 +99,10 @@ class FederatedClient:
             lr=lr,
             weight_decay=weight_decay
         )
-        criterion = nn.BCEWithLogitsLoss()
+        pos_count = (self.y_train_tensor == 1.0).sum().float()
+        neg_count = (self.y_train_tensor == 0.0).sum().float()
+        pos_weight = (neg_count / torch.clamp(pos_count, min=1.0)).detach()
+        criterion = nn.BCEWithLogitsLoss(pos_weight=pos_weight)
         
         if sigma > 0.0:
             from opacus import PrivacyEngine

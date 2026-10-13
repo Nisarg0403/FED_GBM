@@ -1,0 +1,14 @@
+\begin{table}
+\caption{Comparison with Published GBM Survival Studies.}
+\label{tab:table2}
+\begin{tabular}{lllll}
+\toprule
+Study & Dataset & Architecture & Paradigm & Primary Metric \\
+\midrule
+Oncul et al. [7] & TCGA (N=135) & XGBoost & Centralized & AUC 0.900 \\
+Kickingereder et al. [10] & TCGA (N=112) & DL + CoxPH & Centralized & C-Index 0.710 \\
+Abdul Salam et al. [12] & BraTS 2021 & CNN-RNN + FL & Federated & AUC 0.998 (Seg) \\
+FED-GBM v4 (Ours) & TCGA+UPenn+CGGA (N=1,398) & CA-FedAvg + DP-MLP & Federated (LOSO) & AUC 0.735 / C-Index 0.726 \\
+\bottomrule
+\end{tabular}
+\end{table}

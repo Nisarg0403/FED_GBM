@@ -1,0 +1,6 @@
+Comparison,AUC Delta,t-Statistic,Raw p-Value,Bonferroni p,ECE p-Value,Significant at 0.05
+CA-FedAvg vs FedAvg,+0.017,2.145,0.059,0.295,0.125,No (AUC)
+CA-FedAvg vs FedProx,+0.013,1.892,0.089,0.445,0.045,No (AUC)
+HAPA vs FedAvg,+0.013,1.765,0.109,0.545,0.089,No (AUC)
+HAPA vs FedProx,+0.009,1.432,0.184,0.920,0.150,No (AUC)
+CA-FedAvg vs HAPA,+0.004,0.985,0.349,1.000,0.007*,Yes (ECE)

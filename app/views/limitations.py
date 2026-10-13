@@ -88,7 +88,7 @@ def render():
 
     # ── Peer-Review Methodological Rationales ──────────────────────────────
     st.markdown("---")
-    st.markdown("### 🎓 Peer-Review Methodological Defense (IEEE / Biomedical Standards)")
+    st.markdown("### 🎓 Peer-Review Methodological Defense (Biomedical AI Standards)")
 
     peer_rationales = [
         {

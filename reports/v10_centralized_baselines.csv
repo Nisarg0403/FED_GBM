@@ -1,0 +1,9 @@
+cohort,step,n_features,c_index,auc_12m
+TCGA,Step A (Shared Clinical),4,0.6152,0.3764
+TCGA,Step B (+ KPS Clinical),5,0.6708,0.2777
+TCGA,Step C (+ Top-100 Genes),104,0.8367,0.0848
+TCGA,Step D (+ All Combined),105,0.8253,0.0866
+CGGA_Combined,Step A (Shared Clinical),4,0.5361,0.4391
+CGGA_Combined,Step B (+ Treatment Flags),6,0.5647,0.4262
+CGGA_Combined,Step C (+ Top-100 Genes),104,0.7231,0.1889
+CGGA_Combined,Step D (+ All Combined),106,0.7159,0.2196

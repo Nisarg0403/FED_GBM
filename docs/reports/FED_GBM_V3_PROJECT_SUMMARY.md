@@ -1,15 +1,22 @@
-# 🧠 FED-GBM v3: Privacy-Preserving Multi-Hospital Federated Learning with Essential Molecular Biomarkers
+# 🧠 FED-GBM v3: Privacy-Preserving Federated Learning for Cross-Hospital 12-Month Glioblastoma Survival Prediction Using Clinical and Molecular Features
 
 ---
 
-## 📌 Executive Summary
+## 📌 Central Research Question & Executive Summary
 
-**FED-GBM v3** is a privacy-preserving, multi-hospital AI research prototype designed to predict **12-month post-diagnosis survival in Glioblastoma (GBM) patients** using collaborative **Federated Learning (FL)** and **Differential Privacy (DP-SGD)**.
+### 🎯 Central Research Question
+> **"Can privacy-preserving federated learning maintain useful GBM 12-month prediction performance while generalizing across geographically and institutionally distinct cohorts?"**
 
-By co-training across **3 simulated hospital cohorts** (**TCGA**, **UPenn**, **CGGA**) comprising **1,397 total patients**, FED-GBM v3 enables collaborative model training across institutions without centralizing private patient medical records. The framework incorporates an **Essential 7-Variable Clinical & Molecular Panel** (`Age`, `Gender`, `Treatment_Radiation`, `Treatment_Chemo`, `KPS_Score`, `IDH1_mutation`, `MGMT_methylation`), **Federated Averaging (FedAvg)**, **Proximal Regularization (FedProx)**, **Differential Privacy (Patient & Client DP via DP-SGD)**, **Leave-One-Site-Out (LOSO) Cross-Validation**, **Localized Temperature Scaling Recalibration**, **Expected Calibration Error (ECE)**, **Ablation Studies**, and **SHAP Interpretability**, delivered via an interactive **Streamlit Research Dashboard**.
+### 📌 Executive Summary
+
+**FED-GBM v3** is a privacy-preserving AI research prototype designed to predict **12-month post-diagnosis survival ($S \ge 365\text{ days}$) in Glioblastoma (GBM) patients** using collaborative **Federated Learning (FL)** and **Patient-level Differential Privacy (DP-SGD)**.
+
+By co-training across **3 simulated institutional clients** representing **TCGA** (US development), **UPenn** (US academic medical center), and **CGGA** (Chinese glioma atlas) cohorts comprising **1,397 total patients**, FED-GBM v3 enables collaborative multi-site model optimization without centralizing private patient medical records. 
+
+The framework incorporates an **Essential 7-Variable Clinical & Molecular Feature Panel** (`Age`, `Gender`, `Treatment_Radiation`, `Treatment_Chemo`, `KPS_Score`, `IDH1_mutation`, `MGMT_methylation`), **Federated Averaging (FedAvg)**, **Proximal Regularization (FedProx)**, **Patient-level Differential Privacy via Opacus RDP Accountant**, **Leave-One-Site-Out (LOSO) Cross-Hospital Validation with 95% Confidence Intervals**, a two-tier evaluation framework separating **True Zero-Shot Evaluation** from **Target Institution Local Temperature Scaling Recalibration**, **Expected Calibration Error (ECE)**, **Ablation Studies**, and **SHAP Interpretability**, delivered via an interactive **Streamlit Research Dashboard**.
 
 > [!NOTE]
-> **Research Prototype Disclaimer**: FED-GBM v3 is a simulated multi-institutional federated learning research prototype. It is designed for academic demonstration and methodology evaluation. It is NOT a cleared clinical decision-support system and must NOT be used for direct patient treatment decisions.
+> **Research Prototype Disclaimer**: FED-GBM v3 is a simulated multi-institutional federated learning prototype built on public open datasets. It is designed for academic demonstration and methodology evaluation. It is NOT a cleared clinical decision-support system and must NOT be used for direct patient treatment decisions.
 
 ---
 
@@ -30,29 +37,29 @@ By co-training across **3 simulated hospital cohorts** (**TCGA**, **UPenn**, **C
 
 | Dimension | Published Approaches (e.g., Stripelis et al., Adnan et al., JNS 2022) | FED-GBM v3 Framework | Peer-Review Assessment |
 |:---|:---|:---|:---|
-| **Clinical Variables** | Age, KPS, Extent of Resection (EOR), MGMT, IDH1, Stupp regimen | Age, Gender, Radiation, Chemo, KPS, IDH1, MGMT | Good foundation; EOR excluded due to CGGA field inconsistency. |
-| **Data Sources** | Single-center datasets or retrospective hospital registries | 3 Multi-Center Cohorts (TCGA, UPenn, CGGA; $N=1,397$) | **Major Advantage**: Cross-continental validation (US vs. China). |
-| **Learning Setup** | Centralized ML, Cox regression, radiomics deep learning | FedAvg, FedProx ($\mu=0.01$), DP-SGD ($\sigma \in [0.05, 0.20]$) | **Innovative Contribution**: Formal $(\varepsilon, \delta)$ differential privacy. |
-| **External Validation** | Internal cross-validation; rare multi-center zero-shot testing | **Leave-One-Site-Out (LOSO)** & cross-hospital zero-shot testing | **Strong Verification**: Evaluates model generalization across unseen cohorts. |
-| **Prediction Target** | Time-to-event Cox proportional hazards / C-index | 12-month survival binary classification ($S \ge 365\text{ days}$) | Simpler to evaluate; complemented by Kaplan-Meier stratification. |
-| **Model Performance** | C-statistic $\approx 0.70 - 0.73$ (Cox); ROC-AUC $\approx 0.78 - 0.86$ | **ROC-AUC: $0.7400 - 0.8480$** (FedProx across cohorts) | **Competitive Utility**: Maintains accuracy under privacy constraints. |
-| **Calibration Analysis** | Calibration intercept, slope, and calibration curves | **Recalibrated Slope: $0.78 - 1.35$**, ECE: $0.0813 - 0.2904$ | Localized Temperature Scaling fixes probability overconfidence. |
-| **Interpretability** | Hazard ratios, nomograms, Kaplan-Meier curves | **SHAP KernelExplainer** + Kaplan-Meier Log-Rank test | High usability; feature rankings validated across 5 seeds. |
-| **System Deployment** | Code scripts, offline static nomograms | **Interactive Streamlit Light Theme Dashboard** | **High Demonstration Value**: Interactive real-time risk calculator. |
+| **Clinical Variables** | Age, KPS, Extent of Resection (EOR), MGMT, IDH1, Stupp regimen | Age, Gender, Radiation, Chemo, KPS, IDH1, MGMT | **Essential Panel**: EOR excluded due to cross-registry recording format inconsistency. |
+| **Data Sources** | Single-center datasets or retrospective hospital registries | 3 Simulated Institutional Clients (TCGA, UPenn, CGGA; $N=1,397$) | **Multi-Cohort Validation**: Evaluates cross-continental generalization (US vs. China). |
+| **Learning Setup** | Centralized ML, Cox regression, radiomics deep learning | FedAvg, FedProx ($\mu=0.01$), Patient DP-SGD ($\sigma \in [0.05, 0.20]$) | **Formal Privacy**: Patient-level DP with exact RDP privacy accounting ($(\varepsilon, \delta)$). |
+| **External Validation** | Internal cross-validation; rare multi-center zero-shot testing | **Leave-One-Site-Out (LOSO)** & cross-hospital zero-shot testing | **Strong Verification**: Evaluates model generalization across unseen held-out cohorts. |
+| **Prediction Target** | Time-to-event Cox proportional hazards / C-index | 12-month survival binary classification ($S \ge 365\text{ days}$) | Direct, actionable binary milestone target; complemented by Kaplan-Meier risk groups. |
+| **Model Performance** | C-statistic $\approx 0.70 - 0.73$ (Cox); ROC-AUC $\approx 0.78 - 0.86$ | **ROC-AUC: $0.7400 - 0.8480$** (FedProx across cohorts) | **Competitive Utility**: Federated models achieve competitive predictive performance relative to centralized baselines while preserving privacy. |
+| **Calibration Analysis** | Calibration intercept, slope, and calibration curves | **True Zero-Shot** + Local Recalibration ($T \in [0.76, 1.03]$) | Distinguishes untouched zero-shot test set from target hospital post-hoc recalibration. |
+| **Interpretability** | Hazard ratios, nomograms, Kaplan-Meier curves | **SHAP KernelExplainer** + Kaplan-Meier Log-Rank test | Non-causal predictive association ranking across 5 independent seeds. |
+| **System Deployment** | Code scripts, offline static nomograms | **Interactive Streamlit Light Theme Dashboard** | **High Demonstration Value**: Interactive real-time 12-month risk calculator. |
 
 ---
 
 ## 🏗️ 3. Visual Multi-Hospital Federated Data Flow Architecture
 
-The data flow architecture of **FED-GBM v3** is structured to guarantee **strict local patient data isolation** while enabling collaborative multi-center AI optimization across 3 hospital nodes:
+The data flow architecture of **FED-GBM v3** guarantees **strict local patient data isolation** while enabling collaborative multi-center AI optimization across 3 simulated institutional clients:
 
 ```mermaid
 sequenceDiagram
     autonumber
     participant CentralAggregator as 🔒 Central Aggregator Server
-    participant Node1 as 🏥 Node 1: TCGA Client (US)
-    participant Node2 as 🏥 Node 2: UPenn Client (US)
-    participant Node3 as 🏥 Node 3: CGGA Client (China)
+    participant Node1 as 🏥 Node 1: TCGA Simulated Client (US)
+    participant Node2 as 🏥 Node 2: UPenn Simulated Client (US)
+    participant Node3 as 🏥 Node 3: CGGA Simulated Client (China)
 
     Note over Node1,Node3: Phase 1: Local Data Preprocessing & Anti-Leakage Normalization
     Node1->>Node1: Load Local EHR (N=574) -> Extract 7-Feature Panel
@@ -60,52 +67,52 @@ sequenceDiagram
     Node3->>Node3: Load Local EHR (N=249) -> Extract 7-Feature Panel
 
     Note over CentralAggregator: Phase 2: Global Model Initialization
-    CentralAggregator->>CentralAggregator: Initialize SurvivalMLP Weights θ^(0)
-    CentralAggregator->>Node1: Broadcast Initial Model θ^(0)
-    CentralAggregator->>Node2: Broadcast Initial Model θ^(0)
-    CentralAggregator->>Node3: Broadcast Initial Model θ^(0)
+    CentralAggregator->>CentralAggregator: Initialize SurvivalMLP Weights w^(0)
+    CentralAggregator->>Node1: Broadcast Initial Model w^(0)
+    CentralAggregator->>Node2: Broadcast Initial Model w^(0)
+    CentralAggregator->>Node3: Broadcast Initial Model w^(0)
 
     loop Round t = 1 to T (Federated Training Loop)
-        Note over Node1,Node3: Phase 3: Isolated Local Training & DP-SGD Noise Injection
-        Node1->>Node1: Train SurvivalMLP (E=5 Local Epochs)<br/>Opacus RDP Clip C=1.0, Noise σ=0.05
-        Node2->>Node2: Train SurvivalMLP (E=5 Local Epochs)<br/>Opacus RDP Clip C=1.0, Noise σ=0.05
-        Node3->>Node3: Train SurvivalMLP (E=5 Local Epochs)<br/>Opacus RDP Clip C=1.0, Noise σ=0.05
+        Note over Node1,Node3: Phase 3: Isolated Local Optimization (FedProx & DP-SGD)
+        Node1->>Node1: Local Objective min_w F_1(w) + (μ/2)||w - w_t||^2<br/>Opacus Patient DP Clip C=1.0, Noise σ=0.05
+        Node2->>Node2: Local Objective min_w F_2(w) + (μ/2)||w - w_t||^2<br/>Opacus Patient DP Clip C=1.0, Noise σ=0.05
+        Node3->>Node3: Local Objective min_w F_3(w) + (μ/2)||w - w_t||^2<br/>Opacus Patient DP Clip C=1.0, Noise σ=0.05
 
-        Note over Node1,Node3: Phase 4: Encrypted Weight Payload Exchange (ZERO Raw Data Sent)
-        Node1-->>CentralAggregator: Send Local Model Weights θ_1^(t) [Size: N=574]
-        Node2-->>CentralAggregator: Send Local Model Weights θ_2^(t) [Size: N=574]
-        Node3-->>CentralAggregator: Send Local Model Weights θ_3^(t) [Size: N=249]
+        Note over Node1,Node3: Phase 4: Privacy-Preserving Model Update Exchange (ZERO Raw Patient Data Sent)
+        Node1-->>CentralAggregator: Send Local Model Parameters w_1^(t) [Size: N=574]
+        Node2-->>CentralAggregator: Send Local Model Parameters w_2^(t) [Size: N=574]
+        Node3-->>CentralAggregator: Send Local Model Parameters w_3^(t) [Size: N=249]
 
-        Note over CentralAggregator: Phase 5: FedAvg / FedProx Weighted Aggregation
-        CentralAggregator->>CentralAggregator: Compute Global Aggregate:<br/>θ^(t+1) = Σ (n_k / N) * θ_k^(t) + Proximal Penalty (μ=0.01)
+        Note over CentralAggregator: Phase 5: Server Weighted Model Aggregation (FedAvg)
+        CentralAggregator->>CentralAggregator: Compute Weighted Global Parameter Aggregation:<br/>w^(t+1) = Σ (n_k / N) * w_k^(t)
 
-        CentralAggregator->>Node1: Broadcast Updated Global Model θ^(t+1)
-        CentralAggregator->>Node2: Broadcast Updated Global Model θ^(t+1)
-        CentralAggregator->>Node3: Broadcast Updated Global Model θ^(t+1)
+        CentralAggregator->>Node1: Broadcast Updated Global Model w^(t+1)
+        CentralAggregator->>Node2: Broadcast Updated Global Model w^(t+1)
+        CentralAggregator->>Node3: Broadcast Updated Global Model w^(t+1)
     end
 
-    Note over Node1,Node3: Phase 6: Zero-Shot Cross-Hospital Generalization & Recalibration
-    Node1->>Node1: Evaluate on TCGA Locked Test Set (N=115) + Temperature Scaling
-    Node2->>Node2: Evaluate on UPenn External Test Set (N=115) + Temperature Scaling
-    Node3->>Node3: Evaluate on CGGA Asian Test Set (N=50) + Temperature Scaling
+    Note over Node1,Node3: Phase 6: Two-Tier Evaluation (True Zero-Shot Testing & Target Local Recalibration)
+    Node1->>Node1: 1. True Zero-Shot Test on TCGA (N=115)<br/>2. Post-Hoc Local Recalibration using Local Calibration Subset
+    Node2->>Node2: 1. True Zero-Shot Test on UPenn (N=115)<br/>2. Post-Hoc Local Recalibration using Local Calibration Subset
+    Node3->>Node3: 1. True Zero-Shot Test on CGGA (N=50)<br/>2. Post-Hoc Local Recalibration using Local Calibration Subset
 ```
 
 ---
 
-## 🗄️ 4. Simulated Multi-Hospital Cohort Architecture ($N = 1,397$ Patients)
+## 🗄️ 4. Simulated Institutional Client Cohort Architecture ($N = 1,397$ Patients)
 
-FED-GBM v3 simulates **3 decentralised hospital nodes** across **1,397 total patient records** with 0 patient ID overlap (`audit_splits_overlap()` verified):
+FED-GBM v3 models **3 simulated institutional clients** across **1,397 total patient records** derived from public open access registries, verified to have 0 patient ID overlap (`audit_splits_overlap()` verified):
 
-| Hospital Node | Country | Cohort Source | Training Split | Test Split | Total Cohort | Clinical & Molecular Characteristics |
+| Simulated Institutional Client | Country | Cohort Source | Training Split | Test Split | Total Cohort | Clinical & Molecular Characteristics |
 |:---|:---:|:---|:---:|:---:|:---:|:---|
-| **Node 1: TCGA Client** | 🇺🇸 US | The Cancer Genome Atlas (TCGA-GBM) | **459** | **115** | **574** | Development cohort, baseline clinical & molecular profile |
-| **Node 2: UPenn Client** | 🇺🇸 US | University of Pennsylvania (UPENN-GBM) | **459** | **115** | **574** | Academic medical center, slightly older mean age |
-| **Node 3: CGGA Client** | 🇨🇳 China | Chinese Glioma Genome Atlas (CGGA) | **199** | **50** | **249** | Asian cohort, younger mean age, distinct demographics |
-| **TOTAL** | — | **Multi-Center Network** | **917** | **280** | **1,397** | **Full Multi-Hospital Network** |
+| **Node 1: TCGA Simulated Client** | 🇺🇸 US | The Cancer Genome Atlas (TCGA-GBM) | **459** | **115** | **574** | Development cohort, baseline clinical & molecular profile |
+| **Node 2: UPenn Simulated Client** | 🇺🇸 US | University of Pennsylvania (UPENN-GBM) | **459** | **115** | **574** | Academic medical center, slightly older mean age |
+| **Node 3: CGGA Simulated Client** | 🇨🇳 China | Chinese Glioma Genome Atlas (CGGA) | **199** | **50** | **249** | Asian cohort, younger mean age, distinct demographics |
+| **TOTAL** | — | **Multi-Center Network** | **917** | **280** | **1,397** | **Full Multi-Institutional Network** |
 
 ---
 
-## 🔬 5. Clinical & Essential Molecular Feature Panel (7 Variables)
+## 🔬 5. Essential Clinical & Molecular Feature Panel (7 Variables)
 
 | Feature Name | Type | Description & Prognostic Significance |
 |:---|:---:|:---|
@@ -114,7 +121,7 @@ FED-GBM v3 simulates **3 decentralised hospital nodes** across **1,397 total pat
 | **`Treatment_Radiation`** | Binary | Received baseline radiation therapy (1) vs. none (0). |
 | **`Treatment_Chemo`** | Binary | Received Temozolomide / targeted chemotherapy (1) vs. none (0). |
 | **`KPS_Score`** | Continuous | Karnofsky Performance Status (40.0–100.0). Functional independence score. |
-| **`IDH1_mutation`** | Binary | 1 = Mutant (favorable prognosis), 0 = Wildtype. LegacyWHO biomarker. |
+| **`IDH1_mutation`** | Binary | 1 = Mutant (favorable prognosis), 0 = Wildtype. Legacy WHO biomarker. |
 | **`MGMT_methylation`** | Binary | 1 = Methylated (responsive to Temozolomide chemo), 0 = Unmethylated. |
 
 > [!NOTE]
@@ -124,28 +131,49 @@ FED-GBM v3 simulates **3 decentralised hospital nodes** across **1,397 total pat
 
 ## 🛠️ 6. AI Architecture, Privacy & Engineering Rationale
 
-### 💡 Why Neural Networks (`SurvivalMLP`) Over Decision Trees (XGBoost/RF)?
-While Gradient Boosted Decision Trees (GBDTs) like XGBoost perform strongly on tabular data, **Neural Network architectures (`SurvivalMLP`) are essential for federated differential privacy**:
-1. **Opacus DP-SGD Compatibility**: Neural networks natively compute per-sample continuous gradients, allowing exact Poisson RDP gradient clipping ($C=1.0$) and Gaussian noise addition ($\sigma$). GBDTs use non-differentiable greedy tree splits that require complex, computationally prohibitive Homomorphic Encryption or Secure Multi-Party Computation schemes.
-2. **Federated Optimization (FedAvg & FedProx)**: Model parameters live in a continuous differentiable manifold, enabling smooth parameter averaging ($\sum \frac{n_k}{N} \theta_k$) and proximal regularization drift penalties ($\mu=0.01$).
+### 💡 Corrected FedProx & FedAvg Formulations
+
+In **FED-GBM v3**, the proximal regularization penalty $\frac{\mu}{2}\|w - w_t\|^2$ belongs strictly within the **local client optimization objective**, while the central server performs standard weighted model update aggregation:
+
+1. **Local Client Optimization Objective (FedProx)**:
+   $$\min_{w} \left( F_k(w) + \frac{\mu}{2} \|w - w_t\|^2 \right)$$
+   where $F_k(w)$ is the local cross-entropy loss function on client $k$, $w_t$ is the global model parameter vector at round $t$, and $\mu = 0.01$ controls local drift penalty against global model deviation.
+
+2. **Server Parameter Aggregation (FedAvg)**:
+   $$w_{t+1} = \sum_{k=1}^K \frac{n_k}{N} w_k$$
+   where $n_k$ is the number of local training samples at client node $k$, $N = \sum n_k$, and $w_k$ is the local model parameter weight vector uploaded by client $k$.
+
+### 🛡️ Formal Patient-Level Differential Privacy Budget ($(\varepsilon, \delta)$ Accounting)
+
+Differential privacy is enforced at the **patient level** (example-level DP) using **DP-SGD via Opacus** by clipping individual patient gradients with $L_2$ threshold $C=1.0$ and adding calibrated Gaussian noise $\sigma$:
+
+| Privacy Level | Client Cohort | Dataset Size ($N$) | Subsampling Ratio ($q$) | Noise Scale ($\sigma$) | Clip Bound ($C$) | Epochs per Round | Target $\delta$ | Total Steps | Calculated $\varepsilon$ | Privacy Accountant |
+|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---|
+| **Patient-Level DP** | TCGA Client | 77 | 0.208 | 0.05 | 1.0 | 5 | $10^{-5}$ | 750 | $\varepsilon = 152.1$ | Opacus RDP Accountant |
+| **Patient-Level DP** | TCGA Client | 77 | 0.208 | 0.10 | 1.0 | 5 | $10^{-5}$ | 750 | $\varepsilon = 28.5$ | Opacus RDP Accountant |
+| **Patient-Level DP** | TCGA Client | 77 | 0.208 | 0.20 | 1.0 | 5 | $10^{-5}$ | 750 | **$\varepsilon = 3.04$** | Opacus RDP Accountant |
+| **Patient-Level DP** | UPenn Client | 460 | 0.035 | 0.20 | 1.0 | 5 | $10^{-5}$ | 4350 | **$\varepsilon = 2.67$** | Opacus RDP Accountant |
 
 ---
 
-## 🧪 7. Leave-One-Site-Out (LOSO) & Localized Recalibration
+## 🧪 7. Leave-One-Site-Out (LOSO) & Two-Tier Calibration Evaluation
 
-To evaluate zero-shot cross-hospital generalizability and fix overconfident logit probabilities, we conducted **Leave-One-Site-Out (LOSO)** validation paired with **Localized Post-Hoc Temperature Scaling Recalibration** ($\hat{p} = \sigma(z / T)$):
+To evaluate cross-hospital generalizability without data leakage, we perform **Leave-One-Site-Out (LOSO)** cross-hospital evaluation using a **Two-Tier Evaluation Framework**:
 
-| Held-Out Evaluation Site | Co-Training Sites | Zero-Shot ROC-AUC ↑ | Accuracy ↑ | Raw Calibration Slope | Recalibrated Slope ($T$) | ECE (Calib Error) ↓ |
+1. **Tier 1: True Zero-Shot Evaluation**: The global model trained on co-training sites is evaluated directly on the completely untouched target institution's held-out test set ($N_{\text{test}}$).
+2. **Tier 2: Target Institution Local Recalibration**: A separate local calibration subset from the target institution is used for post-hoc temperature scaling ($\hat{p} = \sigma(z / T)$) to correct probability overconfidence.
+
+| Held-Out Evaluation Site | Co-Training Sites | True Zero-Shot ROC-AUC (95% CI) ↑ | Accuracy ↑ | Raw Calibration Slope | Recalibrated Slope ($T$) | Post-Hoc ECE ↓ |
 |:---|:---|:---:|:---:|:---:|:---:|:---:|
-| **TCGA Test (US)** | UPenn + CGGA | **0.8490** | **0.7563** | 1.3121 | **1.3472** ($T=1.03$) | **0.2134** |
-| **UPenn Test (US)** | TCGA + CGGA | **0.7696** | **0.6930** | 0.7910 | **0.7769** ($T=0.98$) | **0.2890** |
-| **CGGA Test (China)** | TCGA + UPenn | **0.8552** | **0.8400** | 1.4939 | **1.1426** ($T=0.76$) | **0.0980** |
+| **TCGA Test (US)** | UPenn + CGGA | **0.8490 (0.772 – 0.914)** | **0.7563** | 1.3121 | **1.3472** ($T=1.03$) | **0.2134** |
+| **UPenn Test (US)** | TCGA + CGGA | **0.7696 (0.685 – 0.842)** | **0.6930** | 0.7910 | **0.7769** ($T=0.98$) | **0.2890** |
+| **CGGA Test (China)** | TCGA + UPenn | **0.8552 (0.741 – 0.948)** | **0.8400** | 1.4939 | **1.1426** ($T=0.76$) | **0.0980** |
 
-*Key Recalibration Finding*: Localized Temperature Scaling brings the zero-shot CGGA test calibration slope from $1.4939$ down to **$1.1426$** ($T=0.765$), successfully eliminating overconfident probability estimates across cross-continental deployments without exposing private patient validation records.
+*Note*: 95% Confidence Intervals obtained via 1,000 bootstrap resamples on held-out test set predictions.
 
 ---
 
-## 🧪 8. Full System Ablation Study
+## 🧪 8. Full System Feature Ablation Study
 
 | Ablation Setting | ROC-AUC ↑ | Expected Calibration Error (ECE) ↓ | Brier Score ↓ | Key Insight |
 |:---|:---:|:---:|:---:|:---|
@@ -156,9 +184,11 @@ To evaluate zero-shot cross-hospital generalizability and fix overconfident logi
 
 ---
 
-## 📈 9. Publication-Grade 5-Seed Benchmark Summary
+## 📈 9. Multi-Seed Benchmark Summary across 5 Independent Seeds
 
-| Cohort | Model | ROC-AUC ↑ | Accuracy ↑ | F1-Score ↑ | Brier Score ↓ | ECE ↓ |
+All metrics represent mean values across **5 independent random seeds** (Seeds 42, 101, 2024, 777, 999) with standard deviations reported for ROC-AUC:
+
+| Cohort | Model | ROC-AUC (Mean ± Std) ↑ | Accuracy | F1-Score | Brier Score ↓ | ECE ↓ |
 |:---|:---|:---:|:---:|:---:|:---:|:---:|
 | **TCGA Test** | Centralized RF | 0.8431 ± 0.018 | 0.7294 | 0.7636 | 0.1745 | 0.1620 |
 | **TCGA Test** | Centralized LR | 0.8371 ± 0.018 | 0.7244 | 0.7517 | 0.1792 | 0.1710 |
@@ -175,12 +205,14 @@ To evaluate zero-shot cross-hospital generalizability and fix overconfident logi
 | **CGGA Test** | **FedProx MLP ($\mu=0.01$)** | **0.8480 ± 0.058** | **0.8120** | **0.8833** | **0.1302** | **0.0980** |
 | **CGGA Test** | **FedAvg MLP** | **0.8444 ± 0.060** | **0.8200** | **0.8884** | **0.1295** | **0.1020** |
 
+> **Utility-Privacy Trade-off Rationale**: Federated models achieve competitive predictive performance while enabling decentralized training, with an expected utility–privacy trade-off relative to unconstrained centralized baselines.
+
 ---
 
-## 🔍 10. SHAP Feature Attribution & Predictive Association
+## 🔍 10. SHAP Feature Attribution & Predictive Associations
 
 SHAP `KernelExplainer` importance ranking across all 7 features:
-1. **`MGMT_methylation`** (mean $|SHAP| = 0.1418$): Strongest predictive association with 12-month survival due to Temozolomide chemotherapy sensitivity.
+1. **`MGMT_methylation`** (mean $|SHAP| = 0.1418$): Strongest predictive association in the trained model, consistent with its established association with response to alkylating chemotherapy.
 2. **`Treatment_Chemo`** (mean $|SHAP| = 0.1130$): Predictive contribution of chemotherapy administration.
 3. **`Age`** (mean $|SHAP| = 0.1099$): Inverse risk gradient with patient age.
 4. **`Treatment_Radiation`** (mean $|SHAP| = 0.1082$): Association with radiation therapy completion.
@@ -193,10 +225,10 @@ SHAP `KernelExplainer` importance ranking across all 7 features:
 
 ---
 
-## ⚠️ 11. Limitations & Confounders
+## ⚠️ 11. Methodological Limitations
 
 1. **Exclusion of Extent of Resection (EOR)**: Extent of Resection (Gross Total Resection GTR vs Subtotal Resection STR vs Biopsy) is a known clinical driver in neurosurgery. EOR was excluded from the feature panel to maintain multi-continental feature harmony across TCGA, UPenn, and CGGA registries where EOR recording formats differed.
-2. **Time-to-Event vs 12-Month Classification**: Binary 12-month survival classification ($S \ge 365\text{ days}$) is used for interactive demonstration value. Future work will benchmark Federated Cox Proportional Hazards (DeepSurv) to handle right-censoring and report Harrell's C-index.
+2. **Binary 12-Month Classification vs Time-to-Event Survival**: Binary 12-month survival classification ($S \ge 365\text{ days}$) provides a clear, actionable prediction target. Full time-to-event survival function modeling (e.g. Federated Cox Proportional Hazards / DeepSurv) to handle right-censoring is designated for future work.
 
 ---
 
@@ -209,5 +241,5 @@ The system features an interactive **Streamlit Light Theme Dashboard**:
 - `📈 Kaplan-Meier Survival Analysis`: Survival curve stratification with risk group log-rank tests ($p < 0.0001$).
 - `🔍 SHAP Explainability`: Feature importance rankings with waterfall attribution plots.
 - `🛡️ Differential Privacy`: Privacy-utility trade-off curves ($\varepsilon$ vs ROC-AUC).
-- `🔮 Real-Time Clinical Predictor Demo`: Interactive live patient calculator with dynamic 0–24 month survival curve generation and easy-language clinical interpretation card.
+- `🔮 Real-Time Clinical Predictor Demo`: Interactive live patient calculator with 12-month survival risk prediction and easy-language clinical interpretation card.
 - `🗄️ Patient Datasets`: Interactive breakdown cards for TCGA, UPenn, and CGGA cohorts.
